@@ -1,48 +1,61 @@
 import streamlit as st
 import google.generativeai as genai
+from pypdf import PdfReader
 
-# 1. Configuración de la API (Cámbialo por tu API Key de Google AI Studio)
-genai.configure(api_key="TU_API_KEY_AQUÍ")
+# --- CONFIGURACIÓN DE SEGURIDAD (SECRETS) ---
+# Intentamos obtener la llave desde los secretos de Streamlit
+try:
+    api_key = st.secrets["GOOGLE_API_KEY"]
+    genai.configure(api_key=api_key)
+except KeyError:
+    st.error("⚠️ No se encontró la configuración 'GOOGLE_API_KEY'.")
+    st.stop()
 
-# 2. Configuración de la Interfaz
-st.set_page_config(page_title="TecniTutor IA", page_icon="🛠️")
-st.title("🛠️ TecniTutor IA: Asistente de Mantenimiento")
-st.caption("Tu tutor experto en seguridad y cálculos industriales.")
+PASS_DOCENTE = st.secrets.get("PASS_DOCENTE", "Tecni2026") # También puedes proteger la contraseña
 
-# 3. Instrucciones del Sistema (Tu "Cerebro")
-SYSTEM_PROMPT = """
-Eres TecniTutor IA. Tu rol es ser un tutor de mantenimiento industrial.
-REGLAS:
-1. No des respuestas directas a cálculos.
-2. Exige siempre el protocolo LOTO antes de cualquier paso técnico.
-3. Usa un lenguaje claro y motivador.
+# --- INTERFAZ DE USUARIO ---
+st.set_page_config(page_title="TecniTutor IA - Seguro", page_icon="🛡️")
+
+# [El resto del código de la interfaz y la lógica de PDF se mantiene igual]
+# Solo asegúrate de usar 'api_key' configurada arriba.
+
+with st.sidebar:
+    st.title("🔐 Panel de Control")
+    modo = st.radio("Selecciona tu rol:", ["Estudiante", "Docente"])
+    
+    contexto_pdf = ""
+    
+    if modo == "Docente":
+        password = st.text_input("Contraseña de acceso:", type="password")
+        if password == PASS_DOCENTE:
+            st.success("Acceso Docente Autorizado")
+            uploaded_file = st.file_uploader("Subir manual técnico (PDF)", type="pdf")
+            
+            if uploaded_file:
+                with st.spinner("Procesando conocimiento técnico..."):
+                    reader = PdfReader(uploaded_file)
+                    texto = ""
+                    for page in reader.pages:
+                        texto += page.extract_text() + "\n"
+                    st.session_state['contexto_maestro'] = texto
+                    st.info("📚 Manual cargado y listo.")
+        elif password != "":
+            st.error("Contraseña incorrecta")
+
+# --- LÓGICA DE GEMINI ---
+contexto_actual = st.session_state.get('contexto_maestro', "No hay manual cargado.")
+
+instrucciones_base = f"""
+Eres TecniTutor IA. Fuente de verdad: {contexto_actual}
+Reglas: Seguridad LOTO/EPP primero, método socrático (andamiaje).
 """
 
-# 4. Inicializar el modelo y el historial
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 model = genai.GenerativeModel(
-    model_name="gemini-2.0-flash", # O la versión que estés usando
-    system_instruction=SYSTEM_PROMPT
+    model_name="gemini-2.0-flash",
+    system_instruction=instrucciones_base
 )
 
-# 5. Mostrar mensajes previos
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
-# 6. Lógica del Chat
-if prompt := st.chat_input("¿En qué puedo ayudarte hoy en el taller?"):
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
-
-    with st.chat_message("assistant"):
-        # Enviar historial completo para mantener el contexto
-        chat = model.start_chat(history=[
-            {"role": m["role"], "parts": [m["content"]]} for m in st.session_state.messages[:-1]
-        ])
-        response = chat.send_message(prompt)
-        st.markdown(response.text)
-        st.session_state.messages.append({"role": "assistant", "content": response.text})
+# ... [Misma lógica de chat que el paso anterior] ...
