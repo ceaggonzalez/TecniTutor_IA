@@ -3,100 +3,74 @@ import google.generativeai as genai
 from pypdf import PdfReader
 import os
 
-# --- 1. CONFIGURACIÓN DE SEGURIDAD (Se lee de los Secrets de Streamlit) ---
-try:
-    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-except KeyError:
-    st.error("⚠️ Configura 'GOOGLE_API_KEY' en los Secrets de Streamlit.")
-    st.stop()
+# --- CONFIGURACIÓN ---
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# --- 2. FUNCIÓN DE LECTURA DE BIBLIOTECA (La "Base de Datos" de GitHub) ---
-def cargar_biblioteca_pdf():
-    texto_total = ""
-    carpeta = "manuales" # Nombre de la carpeta en tu repositorio
+# --- FUNCIÓN PARA CARGAR UN MANUAL ESPECÍFICO ---
+def leer_pdf_individual(nombre_archivo):
+    texto = ""
+    ruta = os.path.join("manuales", nombre_archivo)
+    try:
+        reader = PdfReader(ruta)
+        for page in reader.pages:
+            texto += page.extract_text() + "\n"
+    except Exception as e:
+        st.error(f"Error al leer {nombre_archivo}: {e}")
+    return texto
+
+# --- INTERFAZ Y SELECCIÓN DE MANUAL ---
+st.title("🤖 TecniTutor IA")
+
+with st.sidebar:
+    st.header("📂 Configuración")
     
-    if os.path.exists(carpeta):
-        archivos = [f for f in os.listdir(carpeta) if f.endswith(".pdf")]
-        for archivo in archivos:
-            ruta = os.path.join(carpeta, archivo)
-            try:
-                reader = PdfReader(ruta)
-                for page in reader.pages:
-                    texto_total += page.extract_text() + "\n"
-            except Exception as e:
-                st.error(f"Error leyendo {archivo}: {e}")
-    return texto_total
+    # 1. Obtener lista de archivos en la carpeta
+    archivos = [f for f in os.listdir("manuales") if f.endswith(".pdf")] if os.path.exists("manuales") else []
+    
+    if archivos:
+        # 2. Selector de manual (Esto ahorra miles de tokens)
+        manual_seleccionado = st.selectbox("Selecciona el manual de hoy:", archivos)
+        
+        # Cargamos el contenido solo del seleccionado
+        if st.sidebar.button("Cargar Manual"):
+            st.session_state['contexto_maestro'] = leer_pdf_individual(manual_seleccionado)
+            st.success(f"Manual {manual_seleccionado} cargado.")
+    else:
+        st.warning("No hay manuales en la carpeta /manuales")
 
-# --- 3. INICIALIZACIÓN DE ESTADO (Solo ocurre una vez al cargar) ---
-if 'contexto_maestro' not in st.session_state:
-    st.session_state['contexto_maestro'] = cargar_biblioteca_pdf()
-
+# Inicializar historial si no existe
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# --- 4. DISEÑO DE LA INTERFAZ ---
-st.title("🤖 TecniTutor IA")
-st.caption("Asistente técnico basado en manuales oficiales del taller.")
-
-# Barra lateral informativa
-with st.sidebar:
-    st.header("📚 Biblioteca")
-    archivos = [f for f in os.listdir("manuales") if f.endswith(".pdf")] if os.path.exists("manuales") else []
-    if archivos:
-        for a in archivos:
-            st.write(f"✅ {a}")
-    else:
-        st.warning("No hay PDFs en la carpeta /manuales")
-
-# --- 5. LÓGICA DEL CHAT ---
-# Definir instrucciones del sistema con el contexto persistente
-instrucciones_base = f"""
-Eres TecniTutor IA. Tu fuente de verdad es:
-{st.session_state['contexto_maestro']}
-
-REGLAS:
-1. Seguridad LOTO/EPP primero.
-2. No des respuestas directas, usa el andamiaje (preguntas guía).
-3. Si el dato no está en el manual, aclara que es conocimiento general.
-"""
-
-# Mostrar historial
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
-# Entrada del alumno
-# --- LÓGICA DEL CHAT CORREGIDA ---
-
-if prompt := st.chat_input("¿Qué duda técnica tienes?"):
-    # 1. Mostrar y guardar mensaje del usuario
+# --- LÓGICA DEL CHAT CON HISTORIAL ACORTADO ---
+if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # 2. Generar respuesta de la IA
     with st.chat_message("assistant"):
+        contexto = st.session_state.get('contexto_maestro', "No hay manual seleccionado.")
+        
+        instrucciones = f"Eres TecniTutor IA. Usa este manual: {contexto}. Reglas: Seguridad LOTO y usa andamiaje."
+        
+        model = genai.GenerativeModel(
+            model_name="gemini-2.0-flash",
+            system_instruction=instrucciones
+        )
+
+        # --- RECORTE DE HISTORIAL (ESTRATEGIA LEAN) ---
+        # Solo tomamos los últimos 6 mensajes para no saturar la memoria de tokens
+        mensajes_recientes = st.session_state.messages[-6:]
+        
+        history_google = []
+        for m in mensajes_recientes[:-1]: # Excluimos el último porque se envía en send_message
+            role_google = "model" if m["role"] == "assistant" else "user"
+            history_google.append({"role": role_google, "parts": [m["content"]]})
+        
         try:
-            model = genai.GenerativeModel(
-                model_name="gemini-2.5-pro", 
-                system_instruction=instrucciones_base
-            )
-            
-            # --- CORRECCIÓN DE ROLES AQUÍ ---
-            # Google solo acepta 'user' y 'model'. 
-            # Traducimos 'assistant' a 'model' para el historial.
-            history_google = []
-            for m in st.session_state.messages[:-1]:
-                role_google = "model" if m["role"] == "assistant" else "user"
-                history_google.append({"role": role_google, "parts": [m["content"]]})
-            
             chat = model.start_chat(history=history_google)
-            
             response = chat.send_message(prompt)
             st.markdown(response.text)
-            
-            # Guardamos como 'assistant' para que Streamlit muestre el icono correcto
             st.session_state.messages.append({"role": "assistant", "content": response.text})
-            
         except Exception as e:
-            st.error(f"⚠️ Error de conexión: {e}")
+            st.error(f"Error: {e}")
