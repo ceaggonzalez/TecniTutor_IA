@@ -73,7 +73,7 @@ if prompt := st.chat_input("¿Qué duda técnica tienes?"):
 
     with st.chat_message("assistant"):
         model = genai.GenerativeModel(
-            model_name="models/gemini-1.5-flash-latest",
+            model_name="gemini-2.5-pro",
             system_instruction=instrucciones_base
         )
         chat = model.start_chat(history=[
