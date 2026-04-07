@@ -21,6 +21,19 @@ st.set_page_config(page_title="TecniTutor IA - Seguro", page_icon="🛡️")
 
 with st.sidebar:
     st.title("🔐 Panel de Control")
+    # Insertar esto después de st.title()
+with st.expander("👋 ¡Bienvenido a TecniTutor IA! (Lee esto primero)", expanded=True):
+    st.markdown("""
+    **¡Hola, futuro técnico!** 🛠️ 
+    Soy tu asistente inteligente para las prácticas de mantenimiento. Mi objetivo no es darte la respuesta, sino ayudarte a que **tú mismo** domines la tecnología.
+
+    **Reglas de nuestra sesión de hoy:**
+    1. ⚠️ **Seguridad Primero:** Si vamos a trabajar con equipos reales, te preguntaré por tu equipo de protección y el bloqueo de energía (LOTO). Sin seguridad, no hay práctica.
+    2. 🔍 **Piensa antes de actuar:** Si tienes un problema de cálculo o falla, te daré pistas y analogías. ¡Tú tienes el control!
+    3. 📄 **Base Técnica:** Mis respuestas se basan en el manual oficial que tu docente ha cargado para esta sesión.
+
+    *¿En qué componente o sistema estás trabajando ahora? Cuéntame los detalles.*
+    """)
     modo = st.radio("Selecciona tu rol:", ["Estudiante", "Docente"])
     
     contexto_pdf = ""
