@@ -66,27 +66,37 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Entrada del alumno
+# --- LÓGICA DEL CHAT CORREGIDA ---
+
 if prompt := st.chat_input("¿Qué duda técnica tienes?"):
+    # 1. Mostrar y guardar mensaje del usuario
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
+    # 2. Generar respuesta de la IA
     with st.chat_message("assistant"):
-        model = genai.GenerativeModel(
-            model_name="gemini-2.5-pro",
-            system_instruction=instrucciones_base
-        )
-        chat = model.start_chat(history=[
-            {"role": m["role"], "parts": [m["content"]]} for m in st.session_state.messages[:-1]
-        ])
-        #response = chat.send_message(prompt)
-        #st.markdown(response.text)
-        #st.session_state.messages.append({"role": "assistant", "content": response.text})
-        # Busca la línea 82 y cámbiala por esto:
         try:
+            model = genai.GenerativeModel(
+                model_name="gemini-1.5-flash", 
+                system_instruction=instrucciones_base
+            )
+            
+            # --- CORRECCIÓN DE ROLES AQUÍ ---
+            # Google solo acepta 'user' y 'model'. 
+            # Traducimos 'assistant' a 'model' para el historial.
+            history_google = []
+            for m in st.session_state.messages[:-1]:
+                role_google = "model" if m["role"] == "assistant" else "user"
+                history_google.append({"role": role_google, "parts": [m["content"]]})
+            
+            chat = model.start_chat(history=history_google)
+            
             response = chat.send_message(prompt)
             st.markdown(response.text)
+            
+            # Guardamos como 'assistant' para que Streamlit muestre el icono correcto
             st.session_state.messages.append({"role": "assistant", "content": response.text})
+            
         except Exception as e:
-            st.error(f"⚠️ Error de conexión con Google: {e}")
-            st.info("Prueba esperar un minuto o revisa que los PDFs no sean demasiado pesados.")
+            st.error(f"⚠️ Error de conexión: {e}")
