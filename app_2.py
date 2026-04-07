@@ -79,6 +79,14 @@ if prompt := st.chat_input("¿Qué duda técnica tienes?"):
         chat = model.start_chat(history=[
             {"role": m["role"], "parts": [m["content"]]} for m in st.session_state.messages[:-1]
         ])
-        response = chat.send_message(prompt)
-        st.markdown(response.text)
-        st.session_state.messages.append({"role": "assistant", "content": response.text})
+        #response = chat.send_message(prompt)
+        #st.markdown(response.text)
+        #st.session_state.messages.append({"role": "assistant", "content": response.text})
+        # Busca la línea 82 y cámbiala por esto:
+        try:
+            response = chat.send_message(prompt)
+            st.markdown(response.text)
+            st.session_state.messages.append({"role": "assistant", "content": response.text})
+        except Exception as e:
+            st.error(f"⚠️ Error de conexión con Google: {e}")
+            st.info("Prueba esperar un minuto o revisa que los PDFs no sean demasiado pesados.")
