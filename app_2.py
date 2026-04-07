@@ -64,8 +64,7 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
             generation_config={
                 "max_output_tokens": 300, # Respuestas cortas y al grano
                 "temperature": 0.5,       # Menos "creatividad", más precisión técnica
-                },
-            system_instruction=instrucciones
+                }
         )
 
         # --- RECORTE DE HISTORIAL (ESTRATEGIA LEAN) ---
