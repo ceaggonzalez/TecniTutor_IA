@@ -58,14 +58,10 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         1. Responde de forma muy breve (máximo 3 oraciones).
         2. Usa este fragmento del manual: {resumen_manual}
         """
-        
         model = genai.GenerativeModel(
-            model_name="gemini-2.5-flash",
-            generation_config={
-                "max_output_tokens": 300, # Respuestas cortas y al grano
-                "temperature": 0.5,       # Menos "creatividad", más precisión técnica
-                }
-        )
+    model_name="gemini-2.5-flash",
+    system_instruction=instrucciones_base
+    )
 
         # --- RECORTE DE HISTORIAL (ESTRATEGIA LEAN) ---
         # Solo tomamos los últimos 6 mensajes para no saturar la memoria de tokens
