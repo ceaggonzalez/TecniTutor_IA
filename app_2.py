@@ -55,6 +55,10 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         
         model = genai.GenerativeModel(
             model_name="gemini-2.0-flash",
+            generation_config={
+                "max_output_tokens": 300, # Respuestas cortas y al grano
+                "temperature": 0.5,       # Menos "creatividad", más precisión técnica
+                }
             system_instruction=instrucciones
         )
 
