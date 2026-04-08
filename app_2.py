@@ -16,10 +16,18 @@ def leer_documento(nombre_archivo):
             reader = PdfReader(ruta)
             for page in reader.pages:
                 texto += page.extract_text() + "\n"
-        # Si es TXT
+        
+        # Si es TXT (con manejo de errores de codificación)
         elif nombre_archivo.lower().endswith(".txt"):
-            with open(ruta, "r", encoding="utf-8") as f:
-                texto = f.read()
+            try:
+                # Intento 1: Estándar moderno (UTF-8)
+                with open(ruta, "r", encoding="utf-8") as f:
+                    texto = f.read()
+            except UnicodeDecodeError:
+                # Intento 2: Estándar de Windows/Latinoamérica (Latin-1)
+                with open(ruta, "r", encoding="latin-1") as f:
+                    texto = f.read()
+                    
     except Exception as e:
         st.error(f"Error al leer {nombre_archivo}: {e}")
     return texto
