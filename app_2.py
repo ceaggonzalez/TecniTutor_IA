@@ -7,13 +7,19 @@ import os
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # --- FUNCIÓN PARA CARGAR UN MANUAL ESPECÍFICO ---
-def leer_pdf_individual(nombre_archivo):
+def leer_documento(nombre_archivo):
     texto = ""
     ruta = os.path.join("manuales", nombre_archivo)
     try:
-        reader = PdfReader(ruta)
-        for page in reader.pages:
-            texto += page.extract_text() + "\n"
+        # Si es PDF
+        if nombre_archivo.lower().endswith(".pdf"):
+            reader = PdfReader(ruta)
+            for page in reader.pages:
+                texto += page.extract_text() + "\n"
+        # Si es TXT
+        elif nombre_archivo.lower().endswith(".txt"):
+            with open(ruta, "r", encoding="utf-8") as f:
+                texto = f.read()
     except Exception as e:
         st.error(f"Error al leer {nombre_archivo}: {e}")
     return texto
@@ -25,18 +31,19 @@ with st.sidebar:
     st.header("📂 Configuración")
     
     # 1. Obtener lista de archivos en la carpeta
-    archivos = [f for f in os.listdir("manuales") if f.endswith(".pdf")] if os.path.exists("manuales") else []
+    with st.sidebar:
+    st.header("⚙️ Configuración")
+    
+    # Buscamos tanto .pdf como .txt
+    archivos = [f for f in os.listdir("manuales") if f.endswith((".pdf", ".txt"))] if os.path.exists("manuales") else []
     
     if archivos:
-        # 2. Selector de manual (Esto ahorra miles de tokens)
-        manual_seleccionado = st.selectbox("Selecciona el manual de hoy:", archivos)
-        
-        # Cargamos el contenido solo del seleccionado
-        if st.sidebar.button("Cargar Manual"):
-            st.session_state['contexto_maestro'] = leer_pdf_individual(manual_seleccionado)
-            st.success(f"Manual {manual_seleccionado} cargado.")
+        manual_sel = st.selectbox("Selecciona el manual técnico:", archivos)
+        if st.button("Cargar Manual en Memoria"):
+            st.session_state['contexto'] = leer_documento(manual_sel)
+            st.success(f"✅ {manual_sel} cargado correctamente.")
     else:
-        st.warning("No hay manuales en la carpeta /manuales")
+        st.warning("⚠️ Sube archivos .pdf o .txt a la carpeta /manuales.")
 
 # Inicializar historial si no existe
 if "messages" not in st.session_state:
