@@ -1,0 +1,2638 @@
+Manual Técnico de Motores Eléctricos
+
+Manual Técnico de Motores Eléctricos
+TABLA DE SIMBOLOGÍA
+ASM
+
+Altura sobre el nivel del mar
+
+BHP
+
+Brake Horse Power o Caballo de Potencia en la Flecha
+
+BUN-CA
+
+Fundación Red de Energía
+
+ºC
+
+Grados centígrados
+
+CA
+
+Corriente Alterna
+
+CD
+
+Corriente Directa
+
+CFV
+
+Convertidor de frecuencia variable
+
+Cos
+
+Coseno
+
+D
+
+Diámetro del impulsor
+
+DVD
+
+Disco versatíl digital
+
+ET
+
+Elevación de temperatura
+
+F
+
+Frecuencia de alimentación
+
+f.int
+
+Factor de interpolación
+
+FC
+
+Factor de Carga
+
+FP
+
+Factor de Potencia
+
+F.P.Trifásico
+
+Factor de Potencia Trifásico
+
+FIDE
+
+Fideicomiso para el Ahorro de Energía
+
+GEF
+
+Fondo del Medio Ambiente Mundial
+
+HP
+
+Horse Power o Caballo de Potencia
+
+Hz
+
+Hertz
+
+I1, I2, I3
+
+Corriente por fase
+
+I1-2-3
+
+Corriente trifásica
+
+I2R
+
+Intensidad al cuadrado multiplicado por resistencia
+
+K
+
+Es una constante, igual a 7,124
+
+kV
+
+Kilovatios
+
+kW
+
+Potencia demandada
+
+kWh
+
+Consumo de energía eléctrica kilo Watt Hora
+
+Mm
+
+Milímetros
+
+N
+
+Velocidad del rotor
+
+NEC
+
+National Electrical Code (Código Eléctrico Nacional de USA)
+
+vii
+
+Manual Técnico de Motores Eléctricos
+
+viii
+
+Ns
+
+Velocidad de sincronismo, en revoluciones por minuto.
+
+Nm
+
+Newton por metro
+
+P
+
+Número de pares de polos del devanado del estator
+
+PEER
+
+Programa de Eficiencia Energética Regional
+
+PNUD
+
+Programa de las Naciones Unidas para el Desarrollo
+
+Pot
+
+Potencia al freno, requerida por el equipo
+
+PWM
+
+Modulación del ancho del pulso
+
+Q
+
+Flujo, unidades de volumen entre tiempo
+
+r.p.m.
+
+Revoluciones por minuto
+
+S
+
+Velocidad de deslizamiento
+
+SCR
+
+Rectificadores controladores de silicio
+
+TA
+
+Temperatura de ambiente
+
+V1-2, V1-3, V2-3
+
+Voltaje entre fases
+
+V1-2-3
+
+Voltaje trifásico
+
+Manual Técnico de Motores Eléctricos
+PREFACIO
+Uno de los mayores retos de la sociedad moderna es procurar la explotación suficiente
+y sostenible de recursos energéticos para sustentar las actividades económicas y el
+desarrollo de sus pueblos. En los últimos años hemos experimentado a nivel mundial
+una problemática de magnitudes titánicas en cuanto a los altos costos y la escasez de
+la energía. El problema tiene connotaciones aún más marcadas en regiones como la
+nuestra, que se encuentran en pleno desarrollo social y económico. Este crecimiento ha
+procurado un incremento acelerado en la demanda energética de la región centroamericana,
+y exige que identifiquemos maneras de hacerle frente a esta problemática.
+La eficiencia energética ha sido identificada como una herramienta valiosa en la 
+mitigación del crecimiento de la demanda energética. Tiene un valor económico muy alto,
+ya que las inversiones requeridas para adecuar tecnología, reorganizar el comportamiento
+organizacional asociado al uso de la energía y realizar los mantenimientos y
+otros cambios conducentes a la mejora de la eficiencia energética, son mucho más
+económicos que la expansión de la matriz energética. Esto es especialmente cierto
+para nuestra región donde un gran porcentaje de la energía proviene de la explotación
+de los recursos energéticos fósiles, los cuales son importados a un alto costo.
+La Universidad Tecnológica de Panamá tiene como parte de su misión promover e
+impulsar el desarrollo tecnológico, económico, social y cultural. Y dentro de esta misión
+presenta a la comunidad estos manuales técnicos de iluminación, motores eléctricos,
+refrigeración comercial y acondicionadores de aire los cuales muestran no sólo una
+descripción detallada del estado de la tecnología de cada área, sino que además
+incluyen un conjunto de buenas prácticas conducentes a un incremento en la eficiencia
+energética de estos sistemas en el contexto centroamericano.
+Estos manuales han sido desarrollados por la Fundación BUN-CA como parte de sus
+planes de trabajo, en los cuales la Universidad Tecnológica de Panamá es un socio
+estratégico importante. La información presentada en estos manuales ha sido recabada
+por especialistas del más alto nivel en la región, y son una fuente confiable tanto para
+los ingenieros practicantes, como para los no especialistas que deseen tener una visión
+general sobre el tema.
+Si bien la intención de estos manuales no es preparar especialistas en los temas tratados,
+tienen el propósito de concientizar a la comunidad en estos temas, y son un excelente
+medio de actualización para los profesionales. Esperamos que esta co-edición sea de
+su agrado y que se conviertan en una herramienta más del desarrollo social, comercial
+y energético en Centroamérica.
+
+Ing. Marcela Paredes de Vásquez
+Rectora
+Universidad Tecnológica de Panamá, 2011
+1
+
+Manual Técnico de Motores Eléctricos
+INTRODUCCIÓN
+La capacidad instalada de generación eléctrica en Centroamérica depende cada vez
+más de los hidrocarburos importados, lo cual aumenta la vulnerabilidad energética de
+la región y provoca un aumento en las emisiones de gases efecto invernadero.
+Conforme aumentan los costos de generación de electricidad y la demanda promedio
+continúa creciendo a un 6% anual, de cara a un entorno regional de mayor competitividad
+y mayor desarrollo socio-económico, las necesidades de la nueva capacidad
+instalada aumentan exponencialmente.
+El equipamiento eléctrico utilizado en la mayoría de los procesos industriales y en la
+infraestructura comercial presenta bajos niveles de rendimiento; ello, aunado a que el
+equipo ha sobrepasado su período de vida útil o se acerca a ese límite, provocando
+considerables desperdicios energéticos. Esto se traduce en un incremento en los costos
+de producción y costos operativos.
+Para emprender el desarrollo de mercados sostenibles en torno al uso final eficiente
+de la electricidad, se requiere eliminar una serie de barreras de tipo político, financiero,
+técnico y de información.
+BUN-CA y el Programa de las Naciones Unidas para el Desarrollo (PNUD), con el financiamiento
+del Fondo para el Medio Ambiente Mundial (GEF), desarrollan el “Programa
+Regional en Eficiencia Energética para los Sectores Industrial y Comercial en América
+Central” (PEER), iniciativa que contribuye, entre otros objetivos, a remover las barreras
+de la falta de conocimiento e información técnica para desarrollar los mercados de
+eficiencia energética en Centro América.
+El presente Manual tiene el objetivo específico de fortalecer la plataforma de conocimiento
+en el nivel centroamericano y brindar las bases para el desarrollo técnico necesario, a fin
+de realizar una adecuada selección y uso de los sistemas de iluminación.
+Este texto brinda información técnica sobre los conceptos de estos sistemas, así como
+de las buenas prácticas que deben ser implementadas para lograr un uso eficiente del
+equipo.
+Este Manual también es un medio para acercar el conocimiento general del ahorro de
+energía en iluminación eficiente a quienes se encuentren interesados en el tema, en él
+encontraran prioridad en el tema de eficiencia energética, por tanto aspectos como
+diseño, manufactura, y otros semejantes no son abordados a profundidad.
+
+Fundación BUN-CA, 2011
+
+2
+
+Manual Técnico de Motores Eléctricos
+I. LOS MOTORES ELÉCTRICOS
+
+1.1
+
+La utilización de los motores eléctricos
+
+En las actividades industriales y comerciales es necesario mover distintos procesos productivos, maquinaria y equipos diversos, como ventiladores, bandas transportadoras, bombas de agua, escaleras eléctricas, compresores, taladros, es decir, un sinfín de aplicaciones mecánicas que requieren movimiento.
+La forma más fácil de llevar a cabo ese movimiento es mediante un motor eléctrico, como se muestra
+en la Figura 1.
+La finalidad de los motores eléctricos es
+convertir la energía eléctrica, en forma de
+corriente continua o alterna, en energía
+mecánica apta para mover los accionamientos de todo tipo de máquinas.
+
+Fig 1. Motores eléctricos conectados a un compresor de
+refrigeración y a bombas centrifugas
+
+Los motores eléctricos cubren toda la
+gama de aplicaciones que la sociedad
+moderna exige, se encuentran tan
+pequeños como los usados en el giradiscos de un DVD, tan cotidianos como
+el de una licuadora, un ventilador o un Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+acondicionador de aire; pero también los
+hay tan grandes como los que necesitan las industrias para mover molinos, trituradoras, compresores
+de aire, mezcladoras, etc. Existen industrias macro-consumidoras de electricidad como las fábricas de
+cemento que llegan a utilizar motores de miles de caballos de potencia.
+Otra cualidad que distingue a los motores eléctricos es su larga vida útil (en grandes potencias industriales deben durar por lo menos 10 años), no obstante en muchas empresas operan motores con más
+de 30 años de vida.
+Una ventaja más son los altos rendimientos
+que de ellos se obtiene, en motores pequeños
+(menos de 1 hp) su eficiencia es del orden del
+80%, pero en grandes capacidades llegan
+hasta el 96% de eficiencia. Las eficiencias
+de los motores eléctricos son en general muy
+superiores a la de los motores de combustión
+interna equivalentes, por ejemplo, un motor
+diesel tiene un rendimiento aproximado al 40%,
+con respecto a un motor eléctrico de similar
+potencia, además, son mucho más adaptables, silenciosos y menos contaminantes que
+los motores de vapor o de explosión, gasolina
+o diesel.
+En la Figura 2 se detallan las partes de un motor
+eléctrico.
+
+Fig 2. Partes del motor eléctrico
+
+Fuente: Ing. Abner Fosado, Ingeniería Energética Integral, 2008.
+
+3
+
+Manual Técnico de Motores Eléctricos
+1.2
+
+Cómo funciona un motor eléctrico?
+
+Los motores eléctricos están conformados por dos partes principales, i.e.: un estator fijo y un rotor
+móvil.
+Estator fijo. Es la parte externa del motor que no gira,
+en el se encuentra la capacidad magnética del motor,
+está integrado por polos magnéticos (imanes) y un
+embobinado de alambres de cobre (Fig 3). El motor
+eléctrico usa los polos magnéticos (que funcionan
+como imanes) para producir el movimiento del rotor.
+El accionar de los motores se basa en la ley fundamental de los imanes: cargas opuestas se atraen e
+iguales se repelen.
+Dentro de un motor eléctrico por el embobinado de
+cobre circula corriente eléctrica, que a su vez genera
+su campo magnético, asegurando con ello que los
+polos magnéticos del rotor siempre se encuentren
+en repulsión, huyendo del estator por la similitud de
+cargas. Entonces las fuerzas de atracción y repulsión
+producen el movimiento circular del rotor, expresada físicamente como una fuerza axial denominada
+torque, al cual se le agrega una extensión llamada
+flecha o eje, que luego es acoplada al equipo que
+aprovecha el movimiento que se está produciendo.
+
+Fig 3. Forma del estator de un motor eléctrico
+
+Fuente: Ing. Abner Fosado, Ingeniería Energética Integral, 2008.
+
+Fig 4. Forma del rotor de un motor eléctrico
+
+Fuente: Ing. Abner Fosado, Ingeniería Energética Integral, 2008.
+
+Rotor móvil. Es la parte del motor que gira a gran
+velocidad, debido a la acción de los campos magnéticos creados en el motor, su velocidad de rotación
+expresada en revoluciones por minuto (r.p.m.) depende del número de polos magnéticos del estator (Fig
+4). Esta parte se apoya en cojinetes de rozamiento también denominados baleros. El espacio comprendido entre el rotor y estator es constante y se denomina entrehierro.
+
+4
+
+Manual Técnico de Motores Eléctricos
+II. TIPOS DE MOTORES
+La corriente eléctrica que distribuyen las empresas eléctricas es del tipo alterna, sin embargo hay aplicaciones que utilizan también la corriente en forma directa, por ello los motores eléctricos pueden ser
+de corriente directa o de corriente alterna.
+
+2.1
+
+Motores de corriente directa (o continua)
+
+Los motores de corriente directa o continua, como también se les llama, presentan la ventaja de tener
+una gran capacidad para regular su velocidad de rotación, lo cual los hace necesarios en aquellas de
+aplicaciones en las cuales se precisa un ajuste fino de la velocidad y torque.
+En estos motores el estator está formado por polos principales activados por corrientes continuas.
+Suelen llevar además polos auxiliares y en grandes potencias polos de compensación. El rotor se
+alimenta con corriente continua a través del colector y las escobillas.
+Los devanados del estator pueden alimentarse de diferentes formas, dando lugar a motores de características distintas.
+•
+
+Derivación.- El estator se alimenta con la misma tensión de alimentación que el inducido.
+
+•
+
+Independiente.- El estator se alimenta con una fuente de corriente continua independiente.
+
+•
+
+Serie.- La intensidad que atraviesa los devanados del estator es la misma que alimenta el
+inducido.
+
+•
+
+Compuesto.- Es una combinación de las características Serie y Derivación.
+
+No obstante, los motores de corriente directa necesitan una alimentación especial diferente a la que
+suministran la empresas eléctricas, por ello utilizan equipos adicionales como rectificadores de potencia,
+con los que la corriente alterna es convertida a directa; así como en ocasiones baterías de reserva lo
+cual incrementa los costos del mismo motor y la instalación complementaria.
+Por las grandes ventajas que tiene recibir la corriente alterna, la gran mayoría de los equipos que
+requieren de un motor eléctrico utilizan motores de corriente alterna, preferentemente en forma trifásica,
+aunque existen muchos motores de baja potencia que reciben sólo una fase eléctrica (monofásicos).
+Actualmente, producto del alto desarrollo tecnológico, los motores de corriente alterna también pueden
+variar la velocidad y torque que entregan al equipo acoplado, para ello deben instalarse en combinación
+con un regulador electrónico de velocidad variable, conocidos en el lenguaje industrial como “Drivers”,
+“Variadores de Frecuencia” ó “Convertidores de Frecuencia Variable”, según se explica en la Sección
+VIII.
+Esta poderosa ventaja está haciendo que los motores de corriente directa sean paulatinamente reemplazados por motores de corriente alterna con variador de velocidad integrado. De hecho gran parte
+de la maquinaria nueva ya no incluye motores de corriente directa. Otra desventaja de los motores de
+corriente directa es que precisan un mantenimiento mayor que los motores de corriente alterna y cada
+mantenimiento es bastante costoso. El colector y las escobillas necesitan mucha atención y cuidados.
+
+5
+
+Manual Técnico de Motores Eléctricos
+Los motores de corriente continua presentan la ventaja de una gran capacidad para la regulación de la
+velocidad, lo cual los hace necesarios en cierto tipos de aplicaciones, en los cuales se precisa un ajuste
+fino de la velocidad y del torque del motor. Sin embargo, presentan los siguientes inconvenientes:
+•
+
+Alimentación.
+La generación y distribución de energía eléctrica se realiza en corriente alterna. Estos motores
+necesitan una alimentación especial, mediante equipos rectificadores de potencia, así como en
+ocasiones baterías de reserva, lo cual incrementa los costos de la instalación.
+
+•
+
+Mantenimiento.
+Precisan un mantenimiento mayor que los motores de corriente alterna y son bastante más
+costosos. El colector y las escobillas necesitan mucha atención y cuidados.
+Los colectores deben tener una superficie lisa y girar de forma completamente circular. Debe
+evitarse la aparición de fuego o chispas debajo de las escobillas, que pueden ser ocasionadas
+por la marcha no circular del colector, vibraciones, escobillas gastadas, etc. El colector se debe
+tornear periódicamente y los granos de polvo pueden rayarlo. Estas circunstancias los hacen
+poco adecuados para trabajar en atmósferas sucias o ambientes explosivos.
+
+2.2
+
+Motores de corriente alterna: síncronos y asíncronos
+
+Los motores de corriente alterna son los más empleados, dada la gran ventaja de funcionar con la forma
+de corriente que suministran las empresas eléctricas, no requieren pasar la corriente alterna a corriente
+directa, por tanto son de menor costo. Se clasifican en motores asíncronos (o de inducción) y motores
+síncronos. En los síncronos el eje gira a la misma velocidad que lo hace el campo magnético, en los
+asíncronos el eje se revoluciona a una velocidad poco menor a la del campo magnético.
+Los motores asíncronos basan su funcionamiento en la creación de un campo magnético giratorio en
+el entrehierro, debido a la circulación de corriente alterna por los devanados trifásicos y la influencia de
+los polos magnéticos del estator. La velocidad de giro de este campo magnético en revoluciones por
+minuto (r.p.m.), es:
+ns=
+
+120 x f
+p
+
+donde :
+f = Frecuencia de alimentación
+
+120 x f 120 x 60
+=
+= 3600 rp m
+ns =
+2
+p = Número de polos del devanado del estator.p
+120 x f por minuto.
+ns = Velocidad de giro, en
+n srevoluciones
+=
+p
+Por ejemplo, si se suministra energía eléctrica a un motor de 20 HP de dos polos a una frecuencia de
+60 Hz, ¿cuál será la velocidad sincronía del motor?
+Torque ( N m o pie - libra ) x r.p. m
+Potencia =
+K
+120 x f 120 x 60
+=
+= 3600 rp m
+ns =
+p
+2
+
+HP =
+
+6
+
+Potencia =
+
+15 Nm x 3,600 r.p.m
+
+= 7.58 HP
+7,124
+Torque ( N m o pie - libra ) x r.p. m
+K
+
+Manual Técnico de Motores Eléctricos
+La velocidad de giro de un motor eléctrico está determinada por el número de polos magnéticos, entre
+más polos el motor revolucionará más lentamente. La Tabla 1 indica la velocidad de giro del campo
+magnético en función del número de polos para una frecuencia de 60 Hz.
+Tabla 1. Número de polos y velocidad de sincronía de los motores
+No. de Polos
+Velocidad en r.p.m.
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+3600
+
+1800
+
+1200
+
+900
+
+720
+
+600
+
+Fuente: BUN-CA.
+
+La razón para utilizar motores de menor velocidad es para incrementar el torque o par que puede
+entregar el motor. Este término se refiere al equivalente de fuerza por distancia que es capaz de ejercer
+un motor en cada giro. El giro de un motor tiene dos características: el par motor y la velocidad de giro.
+El par motor se expresa y mide en Newton-metro (Nm); un par de 20 Nm, es igual al esfuerzo de tracción
+de 20 Newtones, aplicado a un radio de un metro.
+120 x f
+ns=
+Un ejemplo práctico para comprender
+p la diferencia entre par y potencia se observa en los pedales de
+una bicicleta; en donde el motor sería la persona que pedalea, y el par motor, en ese caso, la presión
+x fpersona conduce su bicicleta a una determinada velocidad
+o fuerza que ejerce sobre los pedales.120
+Si la
+n
+=
+s
+fija, por ejemplo, unos 15 km/h, con un pengrane grande, dando 30 vueltas por minuto; estaría generando una potencia determinada;120
+ahora
+reduce
+la velocidad de giro a 15 revoluciones por minuto,
+x f sí 120
+x 60
+= emplear=el3600
+n s = tendría que
+m par; pues deberá hacer el doble de
+para generar la misma potencia
+doblerpde
+p
+2
+fuerza con cada pedaleada para mantener la velocidad de 15 km/h.
+120 x f 120 x 60
+La potencia puede ser calculada
+por
+= 3600 rp
+n ssi=se conoce= el torque requerido
+m el equipo, mediante la siguiente
+p
+2
+ecuación:
+
+Potencia =
+
+Torque ( N m o pie - libra ) x r.p. m
+K
+
+Torque ( N m o pie - libra ) x r.p. m
+Potencia será expresada
+Potencia =en HP o kW, dependiendo de las unidades empleadas
+K es una constante, igual a 7,124 sí T está enKNm; y 5,250 sí T está pie-libra.
+15 Nm x 3,600 r.p.m
+Por ejemplo, si el torque requerido
+Nm, HP
+y se requiere una velocidad de 3,600
+HP = para un agitador es de 15
+= 7.58
+r.p.m, ¿cuál será la potencia nominal del motor
+para
+satisfacer
+esta
+carga?
+7,124
+donde:		
+		
+
+HP =
+
+15 Nm x 3,600 r.p.m
+
+= 7.58 HP
+
+7,124
+n
+En los motores eléctricos el parn saumenta
+para mantener la velocidad cuando la resistencia al giro es
+S=
+x100
+mayor, esto se logra incrementado
+en
+número
+de polos; en operación sí el voltaje se mantiene consns
+tante, el aumento de par incrementa la corriente consumida.
+n
+n
+S= s
+x100
+ns
+3600 3550
+x100 = 1.39%
+S=
+3600
+3600 3550
+x100 = 1.39%
+3600
+Potencia Mecánica de salida
+Eficiencia =
+Potencia Eléctrica que entra
+
+S=
+
+7
+
+Potencia =
+Torque ( N m o pie - libraK) x r.p. m
+Potencia =
+K
+
+Manual Técnico de Motores Eléctricos
+
+15 Nm x 3,600 r.p.m
+HP
+=
+= 7.58 HP
+15 Nm x 3,600 r.p.m
+7,124
+HP
+=
+=
+7.58
+HP
+Ya se menciono que los motores asíncronos no giran a la velocidad del campo magnético, llamada
+7,124 Se llama deslizamiento “ s”, a la diferencia
+sincronía, sino que lo hacen a una velocidad muy próxima.
+entre la velocidad de sincronismo ns y la del rotor n, expresada como un porcentaje de la velocidad de
+sincronismo:
+2.2.1
+
+Deslizamiento.
+
+S=
+
+n s S n=
+
+ns
+ns
+x100
+
+n
+
+x100
+
+ns
+Por ejemplo, si un motor de 2 polos a 60 Hz tiene una velocidad a plena carga de 3,550 r.p.m., el deslizamiento del mismo es:
+3600 3550
+x100 = 1.39%
+S=
+3600 3550
+3600
+x100 = 1.39%
+S=
+3600
+O sea, el motor de este ejemplo gira a una velocidad
+del 1.39% de la velocidad de sincronía cuando
+Gráfico Potencia
+1. Comportamiento
+delsalida
+deslizamiento
+Mecánica de
+Eficiencia
+=
+y
+corriente
+entrega su potencia nominal.
+PotenciaPotencia
+Mecánica
+de salida
+Eléctrica
+que entra
+Eficiencia =
+Potencia
+Eléctrica
+que
+entra
+Por este motivo, los motores asíncronos no pueden
+funcionar a cualquier velocidad, sino a una serie
+de velocidades cercanas a la de sincronismo,
+Potencia Eléctrica que entra Pérdidas
+Eficiencia
+=
+como lo indica el Gráfico 1. A medida que el motorPotencia Eléctrica
+queEléctrica
+entra Pérdidas
+Potencia
+que entra
+Eficiencia
+=
+ocupa menos carga su deslizamiento
+es menor,
+Potencia Eléctrica que entra
+1,000 x Tension (Voltios)
+su velocidad de rotación se aproxima más a la de
+Resistencia del aislamiento (ohmios)
+1,000= x Tension (Voltios)
+sincronismo; igualmente la corriente nominal sólo
+Diametro del rotor (metros)
+Resistencia del aislamiento (ohmios) =
+se demanda cuando la carga es del 100%, en la
+Diametro del rotor (metros)
+medida que el motor esté a menor carga se solicita
+menos corriente, cuando se queda en vacío puede
+demandar más del 25% de su corriente de placa.
+
+2.3
+
+Motor síncrono
+
+Fuente: BUN-CA
+
+Los motores síncronos sustituyen a los motores asíncronos solamente en aplicaciones que requieren
+características especiales. Se utilizan en grandes industrias que cuentan con aplicaciones de velocidad
+baja además de constante y ser de alta potencia, como: molinos, mezcladoras, trituradoras. En la
+pequeña y mediana empresa son prácticamente innecesarios.
+Una de las ventajas más importantes de los motores síncronos es que su factor de potencia puede
+llegar a tener valores iguales a uno, e incluso se fabrican con “cos f” capacitivo, es decir, con la intensidad adelantada respecto de la tensión, pudiéndose utilizar por tanto como generadores de potencia
+reactiva, compensando así la instalación y evitando recargos por consumo de potencia reactiva, es
+decir, disminuyendo el costo de la facturación eléctrica. La eficiencia de los motores síncronos con cos
+f = 0.8 en adelante es entre 0.5 a 1 % más bajo que con un factor de potencia de la unidad.
+
+8
+
+Manual Técnico de Motores Eléctricos
+III. ASPECTOS TéCNICOS
+La teoría de diseño y las características de operación de un motor eléctrico están determinadas por un
+amplio y variado conjunto de especificaciones técnicas. En este capítulo se introducen dos aspectos
+críticos para entender el uso eficiente de la energía en los motores eléctricos, i.e.: pérdidas de energía
+y eficiencia en el uso de los motores.
+
+3.1
+
+Pérdidas de energía
+
+En la transformación de energía eléctrica en mecánica, que tiene lugar en los motores eléctricos, una
+parte de la energía eléctrica tomada de la red se
+convierte en calor, constituyendo las pérdidas del
+motor (Fig 5).
+
+Fig 5. Pérdidas de un motor eléctrico
+
+Las pérdidas de un motor de inducción pueden agruparse en dos bloques: las que dependen del índice
+de carga del motor, y las que son independientes de
+la carga. La magnitud de ambos tipos dependen del
+diseño, construcción del motor, materiales y calidad
+del proceso de manufactura.
+Una distribución de las pérdidas en función de la
+potencia se muestra en la Tabla 2.
+
+Fuente: Ing. Abner Fosado, Ingeniería Energética Integral, 2008.
+
+Tabla 2. Tipo de pérdidas
+Tipos de
+pérdidas
+
+Independientes
+del Índice de
+Carga
+
+Dónde
+Ocurren?
+
+Núcleo
+armazón,
+rodamientos,
+ventilador
+
+Qué factores las
+determinan?
+1. Tipo, calidad y cantidad del
+material magnético.
+2. Capacidad de eliminar calor.
+3. Fricción entre las partes
+rodantes
+4. Tipo de material aislante
+
+Cómo se disminuyen?
+1. Empleando acero de mejora calidad magnética
+como acero al silicio
+2. Con una armadura diseñada para disipar mejor
+el calor
+3. Utilizando un material aislante que resista mayor
+temperatura
+4. Con un ventilador de enfriamiento de diseño
+aerodinámico
+5. Utilizando baleros de antifricción
+
+Dependientes
+del índice de
+carga
+
+Estator y
+Rotor
+
+1. La potencia entregada por el
+motor reflejada por el índice de
+carga y la corriente eléctrica
+su magnitud es el cuadrado de
+la corriente por la resistencia
+eléctrica del conductor l²R
+
+1. Utilizando conductores de mejor calidad con
+menor resistencia
+2. Con un diámetro adecuado y mayor cantidad
+del conductor eléctrico, mas cobre
+3. Mayor área de laminación
+4. Espacio de etrehierro más estrecho
+
+Fuente: BUN-CA
+
+9
+
+120 x f
+
+120 x 60
+
+p
+
+2
+
+= Eléctricos
+= 3600 rp m
+Manual Técnico de
+n s =Motores
+
+Como ejemplo, en la Tabla 3 se muestra en porcentajes las pérdidas típicas de un motor abierto1 de
+1800 r.p.m.
+Torque ( N m o pie - libra ) x r.p. m
+Potencia
+=
+Tabla
+3. Distribución
+típica de pérdidas de un motor abierto
+K
+Tipos de Perdidas
+
+25
+
+50
+
+100
+
+Estator
+15 Nm x 3,600 r.p.m 42%
+
+38%
+
+28%
+
+Rotor
+
+21%
+
+20%
+
+18%
+
+15%
+
+14%
+
+13%
+
+Ventilacion y Friccion
+
+7%
+
+10%
+
+14%
+
+Adicionales
+
+15%
+
+18%
+
+27%
+
+nTotaln
+S= s
+x100
+n s BUN-CA
+Fuente:
+
+100%
+
+100%
+
+100%
+
+HP =
+
+Nucleo
+
+3.2
+
+Potencia del Motor en HP
+
+= 7.58 HP
+
+7,124
+
+Eficiencia
+
+3600 3550
+S = es la relación x100
+La eficiencia de un motor
+entre =la1.39%
+potencia mecánica de salida y la potencia eléctrica de
+3600
+entrada. Este es el concepto más importante desde el punto de vista del consumo de energía y del
+costo de operación de un motor eléctrico. La eficiencia se puede expresar de las siguientes maneras:
+
+Eficiencia
+
+Eficiencia =
+
+=
+
+Potencia Mecánica de salida
+Potencia Eléctrica que entra
+
+Potencia Eléctrica que entra
+
+Pérdidas
+
+Potencia Eléctrica que entra
+
+1,000 x Tension (Voltios)
+Resistencia del aislamiento (ohmios) =
+El valor más alto de eficiencia es la unidad (1), en el caso ideal
+si las pérdidas
+fueran cero, como lo
+Diametro
+del rotor (metros)
+indica la segunda expresión. Los fabricantes de motores hacen innovaciones tecnológicas tendientes a
+disminuir las pérdidas al máximo posible empleando materiales de alta calidad y un proceso de mejora
+continua en la fabricación.
+Según la eficiencia, los motores eléctricos se clasifican en tres tipos:
+1.
+
+Motores de eficiencia estándar: no consideran la eficiencia como la principal cualidad, más bien
+privilegian la funcionalidad y precio, prácticamente los motores con más de 15 años podrían
+considerarse de eficiencia estándar.
+
+2.
+
+Motor de alta eficiencia: surge en la década de los años noventa, como consecuencia de contrarrestar los altos precios de la energía y por la necesidad evidente de hacer un uso eficiente y
+racional de la energía.
+
+1
+
+10
+
+Motor abierto: es un motor que permite el paso del aire exterior alrededor y a través de sus embobinados, para su enfriamiento.
+PEMEX; NRF-095-PEMEX-2004.
+
+Manual Técnico de Motores Eléctricos
+3.
+
+Motor Premium: La innovación de los motores premium se basa en elevar aún más la eficiencia
+de los motores eléctricos, para ello se ha perfeccionado su proceso de manufactura y se utilizan
+materiales de alta calidad, lo cual implica que su costo es también más elevado.
+
+En el Gráfico 2 se muestran las eficiencias de los diferentes tipos de motores.
+Gráfico 2. Comparativo de eficiencia de motores
+
+Fuente: BUN-CA
+
+3.3
+
+Tipos de carcasa
+
+La carcasa –o armazón- es la superficie envolvente del motor eléctrico, de la cual existen tipos diversos,
+donde los principales son:
+Abierto: Una carcasa abierta con ventilador, la cual permite el paso del aire frío sobre y alrededor de los
+embobinados del motor, aunque este tipo se utiliza en pocas ocasiones.
+Abierto aprueba de goteo: Es un motor abierto en el cual la ventilación impide la entrada de líquidos o
+sólidos al motor, en un ángulo menor a 15 grados con la vertical, ya sea en forma directa o por choque
+y flujo por una superficie horizontal o inclinada hacia adentro.
+Resguardado o protegido: Es un motor abierto donde las aberturas conducen el aire de enfriamiento
+directamente a partes giratorias, exceptuando los ejes lisos del motor, tienen acceso limitado a sus
+partes mediante estructuras, parrillas o metal desplegado, etc. protegiendo el contacto accidental con
+partes giratorias o eléctricas.
+Aprueba de chorro y salpicaduras: Este es un motor abierto en el cual la ventilación impide la entrada
+de líquidos o sólidos en cualquier ángulo menor de 100 grados de la vertical.
+Abierta a prueba de lluvia: Es abierta con conductos de ventilación diseñados para reducir al mínimo
+la entrada de lluvia y partículas suspendidas en el aire a las partes eléctricas del motor.
+A prueba de agua: Es una carcaza totalmente cerrada para impedir que entre agua aplicada en forma
+de un chorro o manguera al recipiente de aceite y con medios para drenar agua al interior, como una
+válvula de retención o una abertura en la parte inferior del armazón, para conectar el drenado.
+Encapsulados: Es un motor abierto en el cual el embobinado está cubierto con un revestimiento
+de material fuerte para proporcionar protección contra la humedad, suciedad y contra substancias
+abrasivas.
+
+11
+
+Manual Técnico de Motores Eléctricos
+Totalmente cerrado: Es un motor cerrado para evitar el libre intercambio de aire entre el interior y exterior de la cubierta, pero no es hermético.
+Totalmente cerrado sin ventilación: Es un motor totalmente cerrado el cual está diseñado para no ser
+enfriado por medios externos.
+Totalmente cerrado con ventilador-enfriador: Es un motor totalmente cerrado con un ventilador para
+soplar aire a través de la carcasa externa. Esto son comúnmente utilizados en atmósferas corrosivas,
+sucias y polvosas.
+A prueba de ignición de polvos. Es una carcaza totalmente cerrada diseñada y fabricada para evitar
+que entren cantidades de polvo que puedan encender o afectar el desempeño del motor.
+A prueba de explosiones. Totalmente cerrado diseñado para impedir una ignición de gas o vapor alrededor de la máquina provocada por chispas, flama, o explosión dentro de la máquina impidiendo que
+salgan fuera de la carcasa.
+
+3.4
+
+Aislamiento del motor
+
+La temperatura ambiente juega un papel importante en la capacidad y selección del tamaño de un
+motor, ya que la temperatura ambiente influye en la elevación permisible de temperatura por sobre los
+40º C normales, lo cual depende en gran medida en el tipo de aislamiento.
+Por ejemplo un motor que trabaje a una temperatura ambiente de 75º C empleando aislamiento clase
+B tiene un aumento permisible de temperatura de 55º C. Si trabajara a su temperatura ambiente normal
+de 40 º C, se podría permitir un aumento de temperatura de 90º C, sin dañar su aislamiento.
+3.4.1
+
+Tipos de aislamiento
+
+Los materiales empleados en aislamientos de motores y máquinas eléctricas pueden ser diferentes
+tipos, según se detallan en la Tabla 4.
+Tabla 4. Materiales aislantes
+Clase de
+Aislamiento
+
+Productos empleados
+
+Medio aglomerante o
+impregnante
+
+Temperatura
+máxima de
+empleo (°C)
+
+A
+
+Esmaltes de acetato de polivinilo, poliuretano. Aglomerado con celulosa
+
+Melamina con fomaldehido, fenol
+con formaldehido
+
+120
+
+B
+
+Fibras de vidrio, productos de mica,
+esmaltes de politeraftalatos, films de
+policarbonato
+
+Goma, laca, compuestos asfalticos o bituminosos, resinas alkideas, resinas de poliéster, melamina y formaldehidos
+
+130
+
+F
+
+Fibras de vidrio, amiato, productos de
+mica, fibras de poliamidas aromáticas,
+films de poliester – imida
+
+Resina epoxi
+Resinas de Poliuretano
+Resinas de silicona
+
+155
+
+H
+
+Fibras de vidrio, amiato, productos de
+mica, fibras de poliamidas aromáticas
+y de poliamida, polietrafluoroetileno,
+cauchos silicona
+
+Resinas de silicona
+
+180
+
+C
+
+Porcelana, mica, cuarzo, vidrio u otro
+material cerámico, polietrafluoroetilino
+
+Resinas de silicona
+
+> 180
+
+Fuente: BUN-CA.
+
+12
+
+ns
+
+Manual Técnico de Motores Eléctricos
+S=
+
+3.5
+
+3600 3550
+x100 = 1.39%
+3600
+
+Resistencia del aislamiento
+
+Una vez instalado y montado el motor, debe medirse con un ohmiómetro el aislamiento a tierra y entre
+fases del motor. Esta prueba debe hacerse obligatoriamente cuando el motor haya permanecido mucho
+Potencia Mecánica de salida
+tiempo almacenado o fuera
+de servicio.
+Eficiencia
+= Deben obtenerse como mínimo los valores siguientes:
+Potencia Eléctrica que entra
+•
+Motores de baja tensión
+
+•
+
+Resistencia del aislamiento (ohmios) = 1,000 x Tensión (Voltios)
+Potencia Eléctrica que entra Pérdidas
+Eficiencia =
+Motores de alta tensión
+Potencia Eléctrica que entra
+Resistencia del aislamiento (ohmios) =
+
+3.6
+
+1,000 x Tension (Voltios)
+Diametro del rotor (metros)
+
+El par en motores de inducción
+
+Según la aplicación mecánica que se dará al motor eléctrico, será necesario hacer corresponder el par
+o torque que se requiere, según se describen a continuación:
+Par a Plena Carga: El par a plena carga es el necesario para producir la potencia de diseño a la velocidad de plena carga. El par a plena carga de un motor es a la vez base de referencia para indicar el par
+de arranque y el par máximo, que se expresan en un cierto porcentaje del par a plena carga.
+Par de Arranque: El par de arranque -o a rotor bloqueado- es el torque que el motor desarrolla cuando
+deja la inercia.
+Par Máximo: Es el máximo torque que desarrolla el motor, es cual se expresa como un porcentaje del torque
+a plena carga. El par máximo de los motores ordinarios varía entre 1.5 y 3 veces del par de plena carga.
+La Tabla 5 indica cual es el tipo de diseño del motor y la aplicación, según los estándares de diseño
+eléctrico NEMA.
+Tabla 5. Diseño del motor y su aplicación
+Clasificación
+
+Torque de arranque
+bajo y corriente de
+arranque normal
+Torque de arranque
+alto y corriente de
+arranque normal
+Torque de arranque
+bajo y alto
+deslizamiento
+
+Torque de
+Arranque
+(% de torque a
+plena carga)
+
+100 a 200%
+
+200 a 250%
+
+250 a 275%
+
+Torque de
+Máximo
+(% de torque a
+plena carga)
+
+200 a 250%
+
+200 a 250%
+
+275%
+
+Corriente de
+Arranque
+
+Deslizamiento
+
+Ejemplo de Aplicación
+
+Normal
+
+Ventiladores, Sopladores,
+bombas, compresores
+menor al 5%
+y en general equipos
+centrífugos.
+
+Normal
+
+Agitadores, bombas,
+compresores recimenor al 5%
+procantes y equipos
+semejantes
+
+Baja
+
+mayor al 5%
+
+Bombas de pozo, de
+vació, extractores, elevadores, molinos, mezcladoras, etc
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+13
+
+Manual Técnico de Motores Eléctricos
+IV. CONDICIONES DE OPERACIÓN
+Los factores externos afectan las especificaciones técnicas de diseño de un motor eléctrico, incluyendo
+aspectos como:
+•
+
+Efectos debido a la calidad de suministro.
+
+•
+
+Factor de Carga
+
+•
+
+Factor de Potencia
+
+•
+
+Perfil de Carga
+
+•
+
+Factor de Servicio
+
+4.1
+
+Efectos debido a la calidad de suministro
+
+Los motores eléctricos están diseñados para operar a un voltaje y frecuencia específicos y su funcionamiento será satisfactorio siempre que el voltaje y frecuencia aplicado no varíe más allá de ciertos rangos
+especificados, según los parámetros de diseño. Estos incluyen:
+•
+
+Variación de voltaje y frecuencia
+Todos los motores están diseñados para funcionar con las siguientes tolerancias:
+•
+
+Una variación de voltaje de ±10% con respecto al nominal, con una frecuencia igual a la
+de placa.
+
+•
+
+Una variación de frecuencia de ± 10% del nominal con alimentación de acuerdo al voltaje
+de placa.
+
+•
+
+Cuando existe una variación combinada de voltaje y corriente, la suma aritmética de
+ambas no debe rebasar el 10% de los valores nominales, siempre que la variación de
+frecuencia no sea mayor a 5% de la nominal.
+
+El 10% de variación de voltaje es un valor aceptable para el buen funcionamiento del motor dado que el
+incremento en temperatura no será tal que pueda dañarlo. Normalmente se encuentran motores trabajando fuera de su voltaje nominal que de su frecuencia nominal.
+•
+
+14
+
+Efectos por variaciones de voltaje
+•
+
+Un decremento en el voltaje incrementa la temperatura lo que reduce enormemente el
+aislamiento y la vida del motor (Gráfico 3).
+
+•
+
+Un incremento en voltaje disminuye considerablemente el factor de potencia. Por el
+contrario, un decremento en voltaje resulta en un incremento en factor de potencia
+(Gráfico 4).
+
+•
+
+El par de arranque es proporcional al cuadrado del voltaje. Por lo tanto, un decremento
+en voltaje resultará en una disminución del torque disponible.
+
+Manual Técnico de Motores Eléctricos
+•
+
+Las variaciones de voltaje afectan el deslizamiento del motor, por ejemplo, un incremento
+de 10% en voltaje resulta en una reducción del deslizamiento de aproximadamente 17%.
+Una reducción en el voltaje de 10% podría incrementar el deslizamiento alrededor de
+21%.
+
+•
+
+Un incremento o decremento en el voltaje disminuye la eficiencia del motor.
+
+Gráfico 3. Variación de Voltaje-Corriente
+
+Gráfico 4. Variación de Corriente –
+Factor de Potencia
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008
+
+•
+
+•
+
+Efectos por variaciones en la frecuencia
+•
+
+Una frecuencia mayor produce un incremento en la velocidad de operación.
+
+•
+
+La mayor velocidad hace que disminuya el par que debe desarrollar el motor para dar la
+misma potencia.
+
+•
+
+Una frecuencia más alta que la requerida mejora el factor de potencia y la eficiencia
+tiende también a incrementarse.
+
+•
+
+Por otra parte, un decremento en
+la frecuencia genera un bajo factor
+de potencia, una disminución en
+la velocidad, mientras que el par
+de arranque y el máximo sufren un
+incremento.
+
+Gráfico 5. Desbalanceo de Corriente
+
+Desbalance de voltaje
+
+En un motor trifásico es indispensable que los
+voltajes entre líneas o fases estén bien balanceados,
+ya que un pequeño desbalanceo de voltaje tiene
+como resultado un desbalanceo de corrientes, así
+como un incremento en la temperatura sobretodo
+de la fase que recibe el menor voltaje, ocasionando
+la mayoría de fallas en motores (Gráfico 5).
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+15
+
+Manual Técnico de Motores Eléctricos
+El desbalanceo de voltaje está definido como la máxima desviación de los voltajes de línea y el voltaje
+promedio del sistema trifásico, dividido entre el voltaje promedio. Si los voltajes están desbalanceados,
+la eficiencia del motor disminuirá a medida que aumente el desbalanceo de voltaje.
+
+4.2
+
+Factor de carga
+
+La potencia nominal de un motor eléctrico indica la potencia mecánica de salida -o en el eje- que es
+capaz de entregar el motor. El factor de carga es un índice que indica la potencia que entrega el motor
+cuando se encuentra ya en operación con relación a la que puede entregar. Por ejemplo, un motor de
+potencia nominal 40 HP que trabaja entregando solo 20 HP, estará trabajando al 50%.
+
+Factor de C arg a =
+
+Potencia real entregada
+Potencia de placa del motor
+
+El factor de carga puede ser expresado en términos de un índice o bien en porcentaje, es decir, indistintamente puede decirse que un factor de carga es de 50% o de 0.5. Es posible que el factor de carga sea
+mayor a la unidad, pues muchos motores se manufacturan para entregar mayor potencia a la nominal.
+Potencia en la flecha (BHP ) 15 BHP
+Esa capacidad adicional de
+potenciadel
+la motor
+indica el
+Potencia
+= factor de servicio del motor. =
+= 20 HP
+
+0.75
+
+0.75
+
+La mayoría de los motores no trabajan al 100% de su capacidad, de hecho es preferible que no lo
+hagan. El factor de carga es un índice que indica el porcentaje de la capacidad del motor que está
+siendo utilizada. Este concepto es muy estudiado por los fabricantes de motores eléctricos y lo reportan
+relacionándolo con la eficiencia en sus manuales técnicos, a porcentajes del 100, 75, 50 y 25%. Un
+ejemplo de cómo es reportado este concepto lo muestra en la Tabla 6, y en forma gráfica, en el Gráfico
+6.
+Tabla 6. Eficiencia de Motores
+HP
+
+16
+
+EFICIENCIA
+
+Factor de
+Carga
+
+25%
+
+50%
+
+75%
+
+100%
+
+7.5
+
+77.25
+
+84.55
+
+86.25
+
+85.68
+
+10
+
+79.2
+
+85.43
+
+86.93
+
+86.44
+
+15
+
+78.3
+
+85.43
+
+87.15
+
+87.24
+
+20
+
+82.4
+
+86.73
+
+88.48
+
+88.6
+
+25
+
+82.8
+
+88.83
+
+89.7
+
+88.78
+
+30
+
+84.55
+
+89.3
+
+90.28
+
+89.6
+
+40
+
+83.75
+
+88.38
+
+90.13
+
+90.48
+
+50
+
+85.95
+
+90.2
+
+91.25
+
+91.24
+
+60
+
+85.9
+
+90.53
+
+91.4
+
+91.66
+
+75
+
+85.65
+
+90.9
+
+92.08
+
+92.08
+
+100
+
+86
+
+90.83
+
+91.83
+
+92.18
+
+Fuente: BUN-CA
+
+Gráfico 6. Eficiencia de Motores
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+Manual Técnico de Motores Eléctricos
+4.3
+
+Factor de potencia
+
+Los motores eléctricos requieren de la inducción
+electro-magnética para operar, por ello la gran
+mayoría presentan un factor de potencia menor al
+90%, que también disminuye aún más cuando se
+reduce el factor de carga. Los motores producen
+un bajo factor de potencia especialmente cuando
+trabajan por debajo del 50% de carga (Gráfico 7).
+
+4.4
+
+Gráfico 7. Curva de comportamiento del factor
+		
+de potencia de varios motores
+
+Perfil de carga
+
+La función que desempeñan los motores eléctricos
+depende de las exigencias del equipo acoplado,
+el cual puede presentar variaciones en su régimen
+de trabajo, las mismas son transmitidas al motor
+eléctrico. Es importante conocer el perfil de carga
+del motor, que es la descripción de las variaciones
+de potencia a las que es sometido el motor en el
+ciclo de trabajo de la máquina o los mecanismos
+acoplados.
+El perfil de carga puede ser de varias horas, un
+día, etc. esto dependerá del tipo de proceso, sin
+embargo, lo más importante es identificar y monitorear un tiempo suficiente para caracterizar el
+equipo electromotriz.
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+Gráfico 8. Potencia de Arranque y Operación
+		
+de un Equipo
+
+En el Gráfico 8 se ejemplifica un perfil de carga
+que muestra el arranque y desarrollo del motor
+hasta alcanzar la potencia eléctrica que le solicita
+el equipo acoplado. La gráfica muestra la relación
+tiempo y potencia eléctrica.
+Las cargas en las que trabajan los motores eléctricos varían conforme una inmensa gama de servicios, sin embargo hay clasificaciones determinadas
+que engloban todos los conceptos y aplicaciones.
+En términos generales los tipos de carga se clasifican en:
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+•
+
+Carga de par constante. Es la carga que demanda del motor un par o torque constante en cualquier rango de velocidad, por ejemplo: elevadores, bandas transportadoras, maquinaria textil,
+impresoras, bombas de desplazamiento positivo y de pistón, extrusoras, mezcladoras, compresores reciprocantes, etc.
+
+•
+
+Cargas de par variable. Es el tipo de cargas en el cual las necesidades de par o torque cambian
+en el ciclo de trabajo, comúnmente en aplicaciones de flujo variable, como bombas, compresores y ventiladores centrífugos, agitadores, etc.
+
+17
+
+Manual Técnico de Motores Eléctricos
+•
+
+Cargas de potencia constante. Es el tipo de aplicaciones en que no importa la velocidad a la
+que esté girando la carga, la potencia se mantiene en su valor máximo. Estas cargas se encuentran básicamente en bobinadoras, dobladores, troqueladoras, hiladoras, etc.
+Muchas de las aplicaciones de velocidad variable utilizan reductores después del motor, debido
+a requerimientos de baja velocidad y par elevado, normalmente la reducción se realiza por
+medios mecánicos como engranes, bandas, etc.
+
+•
+
+Carga de velocidad constante, par constante.
+Algunas aplicaciones requieren de velocidad y par constante, tal como los extractores, ventiladores de flujo constante de cocinas y baños, ventiladores de aire a volumen constante y bombas
+de circulación.
+
+•
+
+Carga de velocidad constante, par variable.
+Otro tipo de carga puede requerir velocidad constante pero con par variable, por ejemplo una
+cortadora opera a la misma velocidad desembragada que cortando, una escalera mecánica
+opera a la misma velocidad independiente de la carga que transporta, lo mismo un transportador de cadenas.
+
+•
+
+Carga de velocidad y par variable.
+
+En estas aplicaciones varían tanto la velocidad como el par, este tipo de carga es el que ofrece el más
+alto potencial de ahorro de energía cuando se les aplica un convertidor de frecuencia variable.
+
+4.5
+
+Factor de servicio
+
+El factor de servicio es un indicador de la capacidad de sobrecarga que puede soportar un motor eléctrico, definiéndose como:
+Potencia máxima en sobrecarga = Factor de Servicio x Potencia del Motor
+Por ejemplo, el valor de 1.1 significa que el motor puede trabajar al 110%; sin embargo esto no quiere
+decir que deba trabajar continuamente a ese valor, el factor de servicio debe entenderse como una
+capacidad adicional que posiblemente se llegue a ocupar en ocasiones especiales de trabajo, de hecho,
+los motores sobrecargados reciben mayor corriente eléctrica que la nominal, calentándose en mayor
+medida y reduciendo notablemente su vida útil, además de bajar la eficiencia de su operación.
+
+18
+
+Manual Técnico de Motores Eléctricos
+V. LA GESTIÓN EFICIENTE DE LOS MOTORES ELÉCTRICOS
+Existen varios aspectos que deben considerar los tomadores de decisión para la gestión eficiente en
+la selección y operación de los motores eléctricos, los cuales van a mejorar no sólo los rendimientos
+energéticos, sino también a contribuir significativamente en la optimización de los costos operativos de
+las empresas que emplean este tipo de tecnologías.
+
+5.1
+
+Selección del tamaño adecuado del motor
+
+En el proceso de selección de un motor eléctrico se deben considerar, al menos los siguientes parámetros.
+Potencia requerida por la aplicación (la cual está directamente asociada al torque requerido para vencer
+la inercia del equipo mecánico)
+•
+
+Eficiencia, según lo indica el fabricante
+
+•
+
+Tipo de carcasa (abierta, cerrada)
+
+•
+
+Factor de potencia, incluyendo los posibles rangos de operación
+
+•
+
+Factor de servicio
+
+•
+
+Velocidad en r.p.m.
+
+•
+
+Temperatura de operación y del ambiente
+
+•
+
+Tipo de aislamiento
+
+•
+
+Número de arranques esperados
+
+Existe otra información relacionada con el ambiente externo que va a operar la unidad, donde deben
+considerar otros parámetros como:
+•
+
+Peligroso o no peligroso (por ejemplo, explosivo)
+
+•
+
+Corrosivo o no corrosivo
+
+•
+
+Altitud sobre el nivel del mar de la instalación mecánica
+
+•
+
+Tipo de suciedad esperada
+
+•
+
+Niveles de humedad
+
+También es importante observar requerimientos de:
+•
+
+protección térmica,
+
+•
+
+facilidad de mantenimiento, y
+
+•
+
+espacio de calefacción para prevenir la falla o desgaste prematuro del motor.
+
+En virtud de que la mayoría de los motores eléctricos presentan su mayor eficiencia al 75% de factor de
+carga, es conveniente que la elección de la potencia de un motor sea para que éste trabaje al 75 % de
+
+19
+
+Manual Técnico de Motores Eléctricos
+carga. Así trabajará en el rango de alta eficiencia y tendrá un 25% de capacidad adicional para soportar
+mayores cargas de trabajo, evitando también el sobrecalentamiento del motor.
+
+Potencia real entregada
+
+Factor
+deeléctrico
+C arg a =la determina el equipo acoplado, que la indica en BHP (Brake Horse
+La potencia del
+motor
+Potencia de placa del motor
+Power) o Caballo de Potencia en la Flecha. A manera de ejemplo; se tiene un ventilador que indica que
+la potencia que debe recibir es 15 BHP, la potencia de motor para acoplar este mecanismo se calcula
+así:
+Potencia del motor =
+
+Potencia en la flecha (BHP ) 15 BHP
+=
+= 20 HP
+0.75
+0.75
+
+Así el motor trabajará dentro de los valores más altos de su eficiencia y en caso necesario tendrá 5
+caballos de potencia reservada para circunstancias de mayor trabajo, pero a pesar de incrementar su
+factor de carga seguirá trabajando en el rango de mayor eficiencia.
+
+5.2
+
+Reemplazo de motores sobredimensionados
+
+Cuando la potencia de un motor es mayor que la carga a la que opera se dice que trabaja a carga
+parcial, cuando esto ocurre se reduce la eficiencia del motor y aumentan los costos de operación, es
+común esta situación en las industrias debido a algunas de las siguientes razones:
+El personal de planta encargado de su operación no calcula correctamente la carga requerida y selecciona un motor más grande que el necesario.
+•
+
+Se adquiere un motor considerando futuros incrementos en la línea de producción.
+
+•
+
+Un motor que no funciona se reemplaza por una unidad de mayor potencia debido a que no se
+tiene disponible el motor adecuado en existencia.
+
+•
+
+Los requerimientos del proceso disminuyeron.
+
+•
+
+Se adquiere una máquina para producir con cargas diversas, pero en la práctica real se utiliza
+menor potencia.
+
+5.3
+
+Sustitución de motores estándar por motores de alta eficiencia
+
+En el Gráfico 9 se presentan las curvas de eficiencia en función del factor de carga para 10 motores
+eléctricos de 1800 r.p.m., la mitad de Eficiencia Estándar y la otra mitad de Eficiencia Alta. Las curvas
+superiores corresponden a motores de alta eficiencia de 10, 20, 30, 40 y 500 HP, las otras cinco curvas
+son de motores estándar de las mismas potencias.
+La potencia eléctrica que demande un motor está totalmente relacionada con la eficiencia del mismo
+y con el factor de carga. De tal manera que al mejorar la eficiencia del motor la demanda eléctrica para
+la misma operación disminuye.
+Observando el Gráfico 9 anterior resulta que es factible el sustituir motores estándar por motores de alta
+eficiencia bajo las siguientes condiciones.
+•
+
+20
+
+Aplicación de Motores de Alta Eficiencia de Menor Tamaño. Cuando el motor estándar está
+trabajando con bajo factor de carga.
+
+Manual Técnico de Motores Eléctricos
+•
+
+Aplicación de Motores de Alta Eficiencia del Mismo Tamaño. Cuando el motor estándar está
+trabajando con un factor de carga entre 60% y 90%.
+
+•
+
+Aplicación de Motores de Alta Eficiencia de Mayor Tamaño. Cuando el motor estándar está
+trabajando con un factor de carga mayor al 95%.
+
+En todos los casos de sustitución deben tomarse muy en serio las condiciones de arranque y tipo de
+motor requerido. Por otro lado, la sustitución debe estar avalada por un estudio minucioso de las condiciones reales de operación del motor, en el que se analicen sobre todos los parámetros eléctricos que
+alimentan al motor, teniendo principal precaución en medir el factor de potencia por cada fase, ya que
+una medición simple de corrientes puede llevar a resultados erróneos.
+Los motores estándar que actualmente se fabrican poseen una buena eficiencia respecto de los motores
+con más de 20 años de fabricación, pero éstos últimos son los que aún siguen operando en muchas
+industrias centroamericanas. Los motores de alta eficiencia son el resultado de estudios en materiales
+y formas de construcción que han dado lugar a su empleo con muy buenos resultados de operación y
+desempeñando su función ya de manera comprobada en numerosas aplicaciones.
+Cuando un motor ya tiene una edad que supera los 10 años o ha tenido una o más reparaciones, es
+recomendable su sustitución, y más aún si se considera el empleo de motores de alta eficiencia debido
+a los incrementos en las tarifas eléctricas nacionales.
+Gráfico 9. Comparación entre motores estándar y motores de alta eficiencia
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+21
+
+Manual Técnico de Motores Eléctricos
+VI. FALLAS EN MOTORES ELÉCTRICOS
+Cuando un motor llega a un taller especializado para su reparación debe ser examinado con cuidado en
+busca de la posible causa de la falla. No es fácil localizar con precisión tal causa, pues muchas veces
+su origen se oculta bajo de devanados quemados u otras averías engañosas. Por ejemplo los devanados pueden estar muy quemados, pero un examen detenido puede descubrir un cojinete dañado que
+ocasionó el rozamiento del motor contra el devanado del estator. Llevando el análisis más a fondo, ¿por
+qué falló el cojinete?, fue por desalineación, exceso de carga o sólo falta de lubricación.
+Una parte importante del proceso consiste en saber porqué se dañan los motores. Se ha encontrado
+que los orígenes de los problemas en un motor suelen estar comprendidos en una de las siguientes
+categorías:
+•
+
+Condiciones ambientales adversas
+
+•
+
+Selección o aplicación incorrectas
+
+•
+
+Instalación inadecuada
+
+•
+
+Desperfectos mecánicos
+
+•
+
+Fallas eléctricas
+
+•
+
+Desbalance de voltaje
+
+•
+
+Mantenimiento inadecuado
+
+•
+
+Fallas por operación en una sola fase
+
+•
+
+Una combinación de dos o más de los factores anteriores
+
+Como cualquier otra máquina, es imposible evitar desperfectos de los motores, pero sí se logra prolongar
+la duración de su vida útil por medio de un adecuado mantenimiento preventivo.
+
+6.1
+
+Condiciones ambientales adversas
+
+6.1.1
+
+Temperatura ambiente
+
+Los motores deben funcionar dentro de la variación límite de su temperatura indicada en su placa de
+identificación a fin de lograr una larga vida útil. Como ya se mencionó anteriormente: por cada 10°C de
+aumento en la temperatura de operación del motor por encima de la nominal, la duración de la vida del
+aislamiento se reduce a la mitad.
+El valor normal de la temperatura ambiente (TA) que se considera al diseñar un motor es de 40C. Si se
+tiene, por ejemplo, un motor con factor de servicio unitario y aislamiento clase 130, que debe trabajar a
+una temperatura ambiente de 50°C. Su elevación de temperatura (ET) , la cual normalmente podría ser
+de 80°C, tendrá que reducirse a:
+ET= 0.9 x(130 –50) = 72 °C.
+
+22
+
+Manual Técnico de Motores Eléctricos
+Además de mantener la temperatura ambiente correcta, hay que localizar y eliminar otras fuentes de
+aumento de temperatura como suelen ser la desalineación, sobrecarga, voltaje incorrecto, presencia de
+vapores corrosivos, sal suspendida en el aire, suciedad, polvo y otros contaminantes ambientales en
+exceso. En lugares con tales condiciones es esencial contar con motores cuyas carcasas estén especialmente diseñadas para cada tipo de operación.
+La humedad es otra causa común de fallas de motores. Si se condensa en la superficie del aislamiento
+por cambios de temperatura o por contacto con agua, dicha superficie se volverá altamente conductora, se dañara y producirá la falla inmediata del motor. Además, es posible que el aislamiento absorba
+humedad con el paso del tiempo, hasta que la resistencia dieléctrica del aislamiento se reduce tanto
+que ocurre la falla.
+6.1.2
+
+Altura sobre el nivel del mar
+
+Además de considerar un valor máximo para la temperatura de ambiente a la que va a operar el motor,
+Potencia
+realaltitud
+entregada
+el diseñador también
+debe
+la máxima
+(o altura sobre el nivel del mar, ASNM) a la
+Factor
+detener
+C argpresente
+a=
+Potencia
+de placa delse
+motor
+que funcionará; para efectos de cálculos
+de funcionamiento
+supone una altitud de 1.000m.
+Puede utilizar la siguiente fórmula para calcular la elevación de temperatura corregida de un motor en
+función de la densidad del aire.
+ET corregida = ET normal + ET del normal
+por Factor
+X, donde
+Potencia
+en laire
+flecha
+(BHP ) 15 BHP
+
+Potencia del motor =
+
+=
+0
+.
+75
+ET normal es la temperatura de operación del motor según especificación 0.75
+
+= 20 HP
+
+Factor aire X es el efecto de la altura sobre la temperatura de operación
+
+A grandes altitudes, el aire es menos denso y menos eficaz para el enfriamiento: esto permite que en
+casi todos los motores la temperatura aumente alrededor del 5% por cada 300m (1.000 pies) de altitud.
+
+6.2
+
+Selección o aplicación incorrecta del motor
+
+Hay muchas formas en que la selección o aplicación de los motores pueden ser incorrectas. A veces el
+error es tan pequeño que la máquina opera largo tiempo sin notarse; de nuevo, es esencial seleccionar
+el tamaño y tipo requerido de motor según la aplicación deseada.
+La instalación también puede ser incorrecta, hay numerosos factores que deben considerarse. Por
+ejemplo, un ciclo severo de trabajo podría ocasionar falla prematura del motor, la marcha irregular a
+tirones, el frenado por contra marcha (inversión) y un prolongado tiempo de aceleración hacen que los
+motores trabajen a velocidad más baja de la normal. Debido a que los motores sometidos a este ciclo
+de servicio toman corrientes muy intensas en el arranque, éstas producen a veces calentamiento excesivo. Además, debido a la baja velocidad, se agrava el problema del sobrecalentamiento.
+La selección de la carcasa también es importante; las hay disponibles y normalizadas para casi cualquier clase de situación.
+
+23
+
+Manual Técnico de Motores Eléctricos
+6.3
+
+Instalación inadecuada
+
+Las deficiencias en el montaje del motor pueden ocasionar su falla. Si los pernos de montaje no son
+de la medida correcta o no están bien apretados, puede ocurrir una desalineación y vibraciones que
+ocasionarán daños en los cojinetes y el eje (flecha) y, en un momento dado la quemadura de los devanados. Las placas de la base de acero, los cimientos y el montaje deben tener suficiente resistencia
+para soportar los paros y arranques, ambos, los programados y los no-programados.
+Acoplamiento, bandas, poleas y cualquiera otras conexiones entre el motor y la carga impulsada deben
+estar bien alineados para evitar la vibración excesiva, que es tan dañina para los motores.
+
+6.4
+
+Desperfectos mecánicos
+
+Una carga excesiva puede dañar con rapidez un motor; éste quizá haya sido al principio del tamaño
+apropiado para la carga, pero una variación en ésta o en el mecanismo para la impulsión puede producir
+sobrecarga del motor.
+Los cojinetes empezarán a fallar, los engranes pueden trabarse o pueden presentarse otras causas de
+fricción o cargas extra. En este caso, el motor consumirá más corriente y se incrementará su temperatura. Si la corriente del motor excede del amperaje nominal a plena carga, aunque sea por un tiempo
+breve, el rápido sobre-calentamiento reducirá la duración del motor. Si se tienen relevadores de sobrecarga del tamaño correcto, se dispararán en caso de una sobre-corriente muy intensa.
+Las fallas de los cojinetes se encuentran entre las más comunes en cualquier motor. Se calcula que casi
+el 50% de las quemaduras de motores se deben a un cojinete dañado. Es necesario conocer a fondo
+los diversos motivos de las fallas de los cojinetes y los procedimientos correctos de mantenimiento para
+lograr un mayor aprovechamiento del motor.
+La desalineación entre el motor y su carga en acoplamientos, engranajes, poleas y bandas es otra
+causa de falla mecánica. Debe practicarse el balanceo o equilibrado dinámico de todos los componentes para obtener una larga duración del motor, lo cual además reducirá al mínimo la vibración y
+problemas asociados.
+
+6.5
+
+Fallas eléctricas
+
+Si el voltaje de suministro es incorrecto o tiene variaciones notables, ocurrirá una avería prematura del
+motor. El bajo voltaje hace que la corriente normal se incremente. Si la reducción en la tensión aplicada
+es considerable, el exceso de corriente producirá sobre calentamiento del motor.
+Un alto voltaje de alimentación para el motor reduce las pérdidas en los devanados, pero el flujo magnético más intenso ocasiona mayores pérdidas en el núcleo.
+Un pequeño incremento en el voltaje de suministro podría reducir el consumo de corriente, sin embargo,
+un aumento del orden del 10% o más con respecto al valor de la placa producirá saturación del hierro
+y una intensificación considerable en la corriente con el consecuente sobre-calentamiento perjudicial
+del motor.
+
+24
+
+Manual Técnico de Motores Eléctricos
+6.6
+
+Desbalance de voltaje
+
+Los voltajes trifásicos desequilibrados o desbalanceados pueden ocasionar una grave alteración en la
+corriente, que puede producir un rápido sobre-calentamiento del motor. Es necesario instalar una protección contra esta condición externa, para lo cual suelen ser adecuados los relevadores de sobrecarga.
+Ya se utilizan nuevos tipos de relevadores para proteger a un motor no sólo contra la caída de fases o
+monofásico, que en realidad es la forma extrema del desbalanceo de la tensión aplicada
+
+6.7
+
+Mantenimiento inadecuado
+
+Generalmente el buen mantenimiento preventivo evita o cuando menos demora, una posible falla del
+motor. Los técnicos han encontrado en algunas instalaciones condiciones tales como polvo y suciedad
+en los motores, conductos de ventilación obstruidos, motores sobre-calentados, corriente incorrecta en
+éstos, cojinetes ruidosos, humedad dentro y fuera de la máquina, debido todo ello a la falta de mantenimiento periódico.
+En algunas ocasiones, no todos los motores necesitan ni ameritan mantenimiento preventivo, en particular cuando el costo de este último puede ser mayor que reparar el motor. Por otra parte, cuando el
+motor se encuentra en una instalación crítica o es muy grande, costoso o difícil de sustituir, entonces
+si se justifica un buen programa de mantenimiento adecuado, además la línea de producción no sufre
+interrupciones, los motores duran más y sus costos totales de operación son más bajos.
+En otras circunstancias los motores son instalados y olvidados, sin recibir ningún tipo de mantenimiento,
+ni siquiera una leve limpieza de polvo, este descuido total de los motores habrá que evitarlo, para ello
+es necesario llevar bitácoras que indiquen el estado de operación del motor, habrá que llenarlas periódicamente, en industrias con personal de mantenimiento dedicado podrán llenarse diario y en otras cada
+semana y aquellas instalaciones que no tienen personal de mantenimiento permanente, por lo menos
+una vez al mes.
+
+6.8
+
+Fallas por operación con una sola fase
+
+Un caso de quemadura de tres motores de 100 hp en una planta industrial pone de relieve el hecho
+de que la protección usual contra sobrecarga en los controladores trifásicos, aunque tenga el ajuste
+adecuado, no es una seguridad total contra las costosas quemaduras de esos motores cuando quedan
+alimentados accidentalmente por una sola fase, lo que constituye un daño común.
+Aunque el NEC, National Electrical Code (Código Eléctrico Nacional de USA) exige la protección de los
+motores contra la sobrecarga, no menciona en absoluto la necesidad de proteger contra daños debidos
+a la operación monofásica accidental que puede producirse en motores trifásicos, en uno de los tres
+hilos de la fase del circuito derivado, o la línea alimentadora de tal circuito. Con tres relevadores de
+sobrecarga en el arrancador del motor, éste se encuentra protegido, por que abren el arrancador en las
+condiciones de apertura de una fase, pero la realidad es que sólo constituyen una protección parcial y
+en condiciones muy específicas de carga y aplicación del motor.
+Aún cuando se cuente con un sistema eléctrico moderno y con buen mantenimiento instalado en una
+planta industrial, aparecen costosos daños a motores por la apertura de una fase en el circuito de
+alimentación, lo cual pone de manifiesto una triste realidad de la industria eléctrica: el empleo creciente
+de motores en todos los tipos de sistemas va acompañado de un número también creciente de quemaduras de motores por monofásico.
+
+25
+
+Manual Técnico de Motores Eléctricos
+VII. REBOBINADO EN MOTORES ELÉCTRICOS
+Cuando falla un motor se tienen tres alternativas: rebobinar el motor que ha fallado, comprar un motor
+nuevo estándar o uno de alta eficiencia para reemplazarlo.
+El rebobinado de motores en Centroamérica sigue siendo de tipo artesanal, ya que son pocos los
+talleres altamente especializados que pueden efectuar trabajos profesionales, empleando comúnmente
+talleres donde al motor se le aplica calor sin control, golpes, torsiones y desarmados no correctos, lo
+cual resulta en una reducción promedio de la eficiencia de un 4 al 6%, por ello es muy importante que
+el taller tenga el equipo adecuado, la metodología correcta y el personal capacitado.
+El uso extendido de retirar las bobinas quemadas, por medio de un soplete, martillo y cuña, por lo
+general daña el aislamiento de las laminaciones del núcleo del Estator, en consecuencia, un motor sin
+aislamiento entre laminaciones tendrá mayores pérdidas por corrientes eléctricas parásitas (llamadas
+corrientes de Eddy), por lo que trabajará más caliente, acortando su vida.
+Algunos motores viejos de Coraza-U fueron construidos con ranuras demasiado grandes, esto hace
+posible que en ocasiones, se pueda realizar un rebobinado eficiente e incrementar ligeramente la
+eficiencia debido a la adición de una cantidad mayor de cobre para reducir la pérdida eléctricas que
+son el producto del valor de la corriente eléctrica por la resistencia eléctrica del cobre, i.e.: I2 x R.
+
+7.1
+
+Procesos de rebobinado
+
+Tamaño correcto del alambre: Un motor puede ser rebobinado con la misma cantidad de alambre en
+el devanado y misma configuración. Si un taller no tiene el tamaño correcto del alambre en existencia y
+utiliza uno de menor diámetro, las pérdidas I2 x R en el estator se incrementarán.
+Menor número de vueltas: Un decremento en el número de vueltas en el estator reduce la resistencia
+del embobinado y cambia el punto en el cual el motor alcanza la máxima eficiencia, incrementa el
+campo magnético, la corriente de arranque y el torque máximo. Así, un cambio de 10 a 9 vueltas puede
+incrementar la corriente de arranque un 23%, lo cual puede causar problemas en la distribución eléctrica y en el sistema de protección del motor.
+Calentamiento en las reparaciones: En un proceso de rebobinado común, el estator se calienta a alta
+temperatura para poder remover el aislante del devanado. Entonces el embobinado se retira y reemplaza. Actualmente la mayoría de los talleres enfatizan más en la rapidez que en la calidad y se utilizan
+altas temperaturas para disminuir el tiempo de reparación y poner el motor rápidamente en operación.
+En ocasiones se utiliza el soplete para ablandar el barniz y removerlo fácilmente. El resultado del uso de
+las altas temperaturas provoca un incremento en las pérdidas debido al cambio en las características
+eléctricas del núcleo del motor.
+Para los motores estándar y de alta eficiencia, los talleres de rebobinado deben seguir las especificaciones de los fabricantes referente a las temperaturas para eliminar el aislamiento. Cuando se retire el
+viejo devanado, es importante que el núcleo esté abajo de los 180 °C.
+Si el núcleo del estator se encuentra demasiado caliente, el aislante entre las láminas se puede dañar,
+incrementándose las pérdidas por corrientes de Eddy y disminuye la eficiencia de operación del motor.
+
+26
+
+Manual Técnico de Motores Eléctricos
+Después de que se ha dañado el aislamiento no podrá ser recuperado ni recobrarse la eficiencia sin
+restaurar el hierro, de igual forma, el motor también se volverá menos confiable.
+La técnica para remover el aislante varía entre los distintos talleres de rebobinado y debe investigarse
+para decidir, dónde va a rebobinarse el motor.
+Causas de la falla: En los talleres debe determinarse la causa que ocasionó la falla del motor. Aparte
+de verificar el procedimiento para desarmar el motor, es necesario asegurarse que el taller de reparación
+cumpla con los siguientes requisitos:
+•
+
+Utilice métodos apropiados de limpieza,
+
+•
+
+Instale aislamiento clase F o algún otro mejor,
+
+•
+
+Use una fase de aislamiento entre todas las fases de empalme,
+
+•
+
+Utilice lazos y métodos de bloqueo para asegurar una estabilidad mecánica,
+
+•
+
+Utilice soldadura en vez de nudos,
+
+•
+
+Use el alambre indicador apropiado,
+
+•
+
+Aplique un tratamiento de barniz adecuado.
+
+Debido a que las características de diseño (así como la geometría y configuración), los tipos de fallas,
+las prácticas de rebobinado y de las especificaciones de los materiales, es imposible identificar un
+costo de rebobinado “típico” para un motor de determinada capacidad, armazón y velocidad.
+
+7.2
+
+Recomendaciones para el rebobinado de motores
+
+Los niveles de decisión generalmente se enfrentan a la decisión: ¿cuándo se debe comprar un motor
+de alta eficiencia en vez de rebobinar el motor estándar que se quemó?
+Esta decisión es complicada y depende de algunas variables como el costo del rebobinado, las pérdidas
+esperadas después de la reparación, costo del motor de alta eficiencia, capacidad y eficiencia del
+motor así como su factor de carga, horas de operación, tarifas de la electricidad y el criterio utilizado
+para el tiempo de recuperación.
+Algunas veces el rebobinar un motor será una de las mejores alternativas. Un rebobinado correcto se
+podría esperar si se tienen los datos del fabricante de cada motor y se le proporcionan al taller.
+Los talleres de rebobinado no tienen todas las especificaciones de los fabricantes, lo que ellos hacen
+es desarmar el motor contando las vueltas del embobinado, anotando los nudos, midiendo el diámetro
+del alambre, etc., antes de remover el viejo embobinado. Algunas veces un motor se quema frecuentemente debido a un mal rebobinado en el pasado. El mismo error se repetirá a menos que el reparador
+conozca el motor y diagnostique el problema.
+De igual manera, se provocan fallas si un motor se somete a requerimientos de servicio inusuales; por
+ejemplo, encendidos frecuentes, un ambiente caliente, bajos voltajes, etc. La mayoría de los talleres
+sabe como modificar las especificaciones originales para que el motor se ajuste a dichas condiciones.
+Es recomendable evaluar la compra de un motor de alta eficiencia en vez de reparar el motor quemado.
+
+27
+
+Manual Técnico de Motores Eléctricos
+A continuación se proporciona algunos lineamientos para considerar la compra de un nuevo motor.
+•
+
+Motores menores de 100 HP y de más de 10 años de vida (especialmente aquellos que han
+sido rebobinados previamente), tendrán eficiencias significativamente menores que los motores
+actuales. En este caso es mejor reemplazarlos.
+
+•
+
+Si el costo del rebobinado excede el 35% del precio de un motor de alta eficiencia, entonces es
+mejor comprar un motor nuevo.
+
+•
+
+Si el costo de la energía eléctrica promedio es un valor considerable y además el motor trabaja
+como mínimo 4,000 horas al año, la sustitución por un motor de alta eficiencia puede ser muy
+rentable.
+
+•
+
+El motor ya haya sido rebobinado más de una ocasión.
+
+El ahorro de energía se determina de acuerdo al procedimiento descrito anteriormente, considerando
+los siguientes puntos:
+•
+
+factor de carga,
+
+•
+
+la eficiencia del motor,
+
+•
+
+horas de operación
+
+•
+
+costo de la energía
+
+Se recomienda que el personal responsable de mantenimiento visite los talleres y conozca las instalaciones del taller, a su personal, conocimiento y capacitación, además de sus métodos de reparación
+a fin de apreciar la calidad de los trabajos, aún cuando el taller no se encuentre en la localidad de la
+industria, pues suele suceder que la persona encargada del equipo normalmente no conoce los talleres
+de reparación.
+
+28
+
+Manual Técnico de Motores Eléctricos
+VIII. APLICACIÓN DE CONVERTIDORES DE FRECUENCIA VARIABLE
+Una de las limitaciones del motor de inducción es la de tener velocidades fijas sin posibilidades de variación; siendo que los procesos y aplicaciones requieren diferentes velocidades y torques, sin embargo,
+se han desarrollado una infinidad de métodos para cambiar y variar las velocidades nominales, pero o
+bien la eficiencia es baja, o el costo del equipo y mantenimiento es alto.
+Uno de los métodos es el convertidor de frecuencia variable (CFV), la principal ventaja de éste es la
+posibilidad de disminuir los consumos de energía eléctrica en algunos de los procesos que controla,
+dando como resultado considerables disminuciones en los costos de operación. El CFV es el único
+control que suministra la potencia, permite la variación de velocidad en el motor sin ningún accesorio
+extra entre el motor y la carga, siendo además una excelente protección al mismo, por lo que ha llegado
+a ser uno de los controles más usados en los últimos años, especialmente para el motor de inducción
+tipo jaula de ardilla; que es el motor más económico, sencillo y robusto, además es el más utilizado en
+la industria e instalaciones en general.
+La alta confianza que ofrecen los CFV y la disminución de los precios en los mismos han permitido
+que cada día se instalen más equipos en todo el mundo; debido a esto y a otras ventajas, es necesario
+conocer y entender los principios básicos del funcionamiento y aplicaciones de los CFV.
+
+8.1
+
+Teoría de funcionamiento del convertidor de frecuencia variable
+
+El convertidor de frecuencia variable es conocido con diferentes nombres: variadores de velocidad,
+drivers, inversores, entre otros, pero el nombre correcto es el de convertidor de frecuencia variable
+pues incorpora el término de frecuencia que es lo correcto técnicamente en este caso, debido a que los
+variadores de velocidad pueden ser equipos mecánicos por ejemplo, turbina de vapor e inversores sólo
+se refieren a una de las etapas del CFV.
+La manera como un CFV convierte voltaje y frecuencia constante en voltaje y frecuencia variable se
+basa en un proceso de 2 pasos principales. Primero la corriente alterna es rectificada y convertida
+a corriente continua, después se invierte y vuelve a entregarse corriente alterna pero con valores de
+frecuencia y voltaje variables.
+El suministro de voltaje de un CFV puede realizarse a frecuencias que van desde 0 Hz hasta 120 o
+más Hz, por tanto, la velocidad del motor es variable en la misma proporción que la variación de la
+frecuencia, así el motor puede girar lento o muy rápido de acuerdo a la frecuencia que le suministre el
+CFV.
+Al mismo tiempo el voltaje es variable en la misma proporción que la variación de la frecuencia, para
+asegurar que la relación voltaje/frecuencia se mantenga con el mismo valor en todo el rango de velocidades mientras no pase de 60 Hz. Esto es debido a que el par que entrega el motor según diseño es
+determinado por esta relación y un motor de 460 Volts tendrá una relación Voltaje/Frecuencia de 7.6, si
+este mismo motor lo manejamos a una frecuencia de 30 Hz, se tiene que suministrar un voltaje de 230
+Volts para mantener la misma relación y el mismo par. Cualquier cambio en esta relación puede afectar
+el par, temperatura, velocidad o el ruido del mismo.
+En resumen, para producir el par nominal en un motor a diferentes velocidades, es necesario modificar
+el voltaje suministrado conforme se modifica la frecuencia. El CFV mantiene esa relación de Voltios/
+Hertz suministrada al motor automáticamente.
+
+29
+
+Manual Técnico de Motores Eléctricos
+8.2
+
+Componentes de un convertidor de frecuencia variable
+
+Los dos componentes principales son:
+Rectificador de Corriente Directa: La parte rectificadora en el CFV convierte el voltaje Corriente Alterna
+(C.A.) en voltaje en Corriente Directa (C.D.), para generar la frecuencia variable de salida necesaria de
+una fuente no alterna, dependiendo del tipo de convertidor este voltaje de C.D. puede ser variable o
+suavizado. La mayoría de los convertidores usados hoy son del tipo de modulación del ancho del pulso
+(Pulse Width Modulation, PWM por sus siglas en inglés) que operan con un voltaje en C.D. suavizado.
+Los diodos de potencia son usados para producir el voltaje de C.D. suavizado y los rectificadores
+controladores de silicio (SCR’s por sus siglas en inglés) son usados para el diseño de voltaje de C.D.
+variable. Es importante hacer notar que el voltaje del bus de C.D. es 1.41 veces mayor al voltaje de C.A.,
+ya que toma el valor del pico de voltaje y no el voltaje R.M.S (Gráfico 10).
+Gráfico 10. Componentes Principales de un Convertidor de Frecuencia Variable
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+Inversor: En esta sección el voltaje en C.D. se invierte y vuelve a tomar la forma alterna por medio de
+rectificadores de silicio o transistores de potencia conectados directamente al bus de C.D. y controlados por microprocesadores, pero esta vez con una frecuencia y voltaje variable. Esta generación
+trifásica de C.A. se realiza a través de aperturas instantáneas de los transistores, aunque tiene ciclos
+positivos y negativos toma una forma cuadrática e interrumpida similar a la alimentación de entrada
+simulando la onda senoidal, según las necesidades de frecuencia pero manteniendo la misma relación
+Voltios/Hertz del motor.
+A esta tecnología se le denomina modulación del ancho de pulsos. Una tarjeta lógica de microprocesadores determina la frecuencia de conmutación de la sección de inversión, permitiendo un rango amplio
+de frecuencias que van desde 0 hasta 400 Hz típicamente.
+
+30
+
+Manual Técnico de Motores Eléctricos
+8.3
+
+Aplicaciones de los convertidores de frecuencia
+
+La instalación de los variadores de velocidad electrónicos se ha venido realizando, para el mejoramiento
+en el control de los procesos y para fines de ahorro de energía. Sin embargo, para esto es importante
+conocer los procesos y las necesidades de los mismos, esto implica conocer los tipos y clases de
+cargas que existen. Hay que recordar que la potencia requerida por la carga es variable y se incrementa
+conforme aumentamos la velocidad (r.p.m.).
+8.3.1
+
+Aplicación por tipo de cargas.
+
+•
+
+Cargas de par constante. La aplicación principal de los CFV en este tipo de carga es la optimización del proceso y rara vez hay ahorros de energía, al menos de que se cumplan las siguientes
+condiciones: que la potencia demandada sea menor a la nominal y que esto sea a velocidades
+menores.
+
+•
+
+Cargas de par variable. En este tipo de cargas el CFV ofrece grandes oportunidades de
+ahorro de energía, debido a que los requerimientos de potencia disminuyen considerablemente
+conforme la velocidad es menor.
+
+8.3.2
+
+Ahorro de energía con convertidores de frecuencia variable.
+
+•
+
+Ahorro de energía en cargas de par variable. Las cargas de par variable son las que proporcionan mayor ahorro de energía y el mayor número de estas aplicaciones son bombas y ventiladores centrífugos.
+Por otra parte, casi la totalidad de las bombas centrífugas actuales son accionadas por motores
+de inducción de jaula de ardilla de velocidad constante, sin embargo, ya puede ser modificada
+su velocidad mediante un convertidor de frecuencia que permita variar la capacidad de bombeo
+evitando las considerables pérdidas de fricción o energía debido principalmente a la estrangulación. Se considera por los potenciales de ahorro de energía que el 70% de las aplicaciones de
+accionamiento de velocidad variable son en este tipo de cargas.
+
+•
+
+Ahorro de energía en cargas de par constante.
+Como se mencionó anteriormente, en una aplicación de par constante también es factible
+ahorrar energía eléctrica durante la operación, siempre y cuando se tengan variaciones en la
+carga y/o el equipo no se encuentre operando a su capacidad nominal.
+Por ejemplo, en una banda transportadora de material pesado, las bandas siempre se dimensionan para transportar la máxima capacidad a la que fue diseñada, por tanto, el motor en
+determinadas ocasiones trabajará sobrado, ya que no siempre transporta la máxima carga, e
+inclusive sin carga debido a que no se alimenta de material regularmente, en estos casos si la
+velocidad baja el consumo de energía disminuirá conforme a lo solicitado por el sistema.
+Una banda medio cargada consume sólo un poco menos de energía que una completamente
+llena. Una banda parcialmente cargada puede consumir el 80% de la energía necesaria para
+transportar la carga completa. Esta relación se empeora si la banda está vacía, ya que consume
+del 50 al 70% de la energía requerida para la carga nominal, de tal forma que aunque no esté
+realizando ningún trabajo ni suministrado material, hay consumo de energía y un desperdicio del
+50% de la energía instalada.
+
+31
+
+Manual Técnico de Motores Eléctricos
+Con un CFV se logra ajustar la velocidad de la banda al material disponible en un momento
+dado. Regulando la velocidad sobre la base del factor de carga, de otra manera si la cantidad
+del material por transportar disminuye a la mitad, la velocidad de la banda disminuiría a la mitad,
+y si la cantidad de material disminuye de tal forma que la banda este vacía, la velocidad de la
+banda se reduce hasta en mínimo con el correspondiente ahorro de energía.
+8.3.3
+
+Ahorro de energía en cargas de par variable
+
+Las cargas de par variable son las que proporcionan mayor ahorro de energía y el mayor número de
+éstas aplicaciones son bombas y ventiladores centrífugos.
+Por otra parte, casi la totalidad de las bombas centrífugas actuales es accionada por motores de inducción de jaula de ardilla de velocidad constante, sin embargo, ya puede ser modificada su velocidad
+mediante un convertidor de frecuencia que permita variar la capacidad de bombeo evitando las considerables pérdidas de fricción o energía debido principalmente a la estrangulación.
+Se considera por los potenciales de ahorro de energía que el 70% de las aplicaciones de los accionamientos de velocidad variable son en este tipo de cargas.
+La instalación de los convertidores de frecuencia se ha venido realizando para el mejoramiento en el
+control de los procesos y para fines de ahorro de energía. Sin embargo, para esto es importante conocer
+los procesos y las necesidades de los mismos, esto implica conocer los tipos y clases de cargas que
+existen. Hay que recordar que la potencia requerida por la carga es variable y se incrementa conforme
+se aumenta la velocidad (r.p.m.).
+Se logra mejor aprovechamiento de la tecnología ahorradora cuando se automatiza la operación, tal
+como ejemplifica el Gráfico 11, que muestra un medidor de oxigeno que manda su valor a un variador
+de velocidad o frecuencia, el cual en su lógica programada en función del valor de la medición cambiará
+la velocidad del motor (r.p.m.), haciendo que el soplador proporcione mayor o menor volumen de aire
+inyectando así cantidades variables de oxigeno.
+
+Gráfico 11. Aplicación de variador de frecuencia
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+•
+
+32
+
+Aplicación de la ley lineal. Algunos equipos como los de desplazamiento positivo ajustan en
+forma proporcional la demanda eléctrica a la velocidad del rotor. En estos casos el pronóstico
+de ahorros debe referirse a la curva de operación del equipo en estudio. Por ejemplo, el Gráfico
+12 es válido para algunos compresores de aire tipo tornillo.
+
+Manual Técnico de Motores Eléctricos
+•
+
+Aplicación de la ley cúbica. En el caso de sistemas de impulsión de fluidos líquidos y gaseosos
+cuando las presiones no son muy altas, como es el caso de bombas y ventiladores respectivamente, existen ciertos parámetros y leyes físicas que rigen su funcionamiento; por los fines y el
+alcance del presente Manual no se detallará la teoría de dónde salen las relaciones que a continuación presentamos como las “leyes de semejanza” para fluidos y sus equipos impulsores.
+
+Existen un conjunto de ecuaciones para calcular la potencia de los motores en bombas, ventiladores y
+compresores centrífugos, a partir de los siguientes parámetros:
+Q = Flujo
+N = Velocidad de la bomba, ventilador, compresor
+Pot. = Potencia al freno, requerida por el equipo
+D = Diámetro del impulsor
+En un sistema de manejo de fluidos no tendría ninguna ventaja instalar un Convertidor de Frecuencia
+Variable si las necesidades de flujo y presión no tuvieran variaciones, y siempre se requiriesen las
+máximas condiciones de trabajo, pero generalmente los sistemas de bombeo e inyección de aire se
+diseñan originalmente considerando el punto máximo de operación.
+Todas las partes involucradas en el diseño como: tuberías, impulsoras, válvulas, tanques, motores, etc.,
+también se encuentran diseñados para abastecer el volumen máximo requerido.
+
+Gráfico 12. Comportamiento de la ley lineal, ejemplo compresor tornillo
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+33
+
+Manual Técnico de Motores Eléctricos
+Considerando lo anterior, y que la mayoría de los sistemas tienen variaciones de demanda, se requiere
+de un sistema de control para regular continuamente el volumen del flujo, de acuerdo a las necesidades.
+Por lo general, el promedio del flujo bombeado puede ser una fracción de la capacidad máxima del
+sistema.
+El control del flujo se puede regular de diferentes maneras, utilizando algunos de los siguientes métodos:
+recirculación, persianas, válvula de estrangulación, cajas de volumen variable, control de arranque/paro
+y convertidores de frecuencia.
+Los métodos que implican poco ahorro de energía serían los de recirculación y arranque/paro, mientras
+que los métodos de control de obturador o estrangulamiento, que son los más usados pero su eficiencia
+es muy baja, la disminución en el consumo de energía es casi insignificante, ya que el motor continúa
+trabajando a su velocidad nominal tratando de sobreponerse a las contrapresiones innecesarias.
+Es aquí donde el CFV sustituye a cualquier tipo de control con grandes ventajas, y el único que reduce
+la velocidad del equipo sin necesidad de elementos mecánicos extras, el ahorro que se obtiene en la
+operación puede llegar al 60%.
+
+8.4
+
+Clasificación de las cargas de los motores
+
+Como fue mencionado anteriormente, los motores
+pueden estar sometidos a diferentes tipos de carga,
+los variadores de velocidad proporcionarán ahorro de
+energía solo cuando están sometidos a un régimen
+variable de trabajo.
+Cargas de Potencia Constante. Es el tipo de
+cargas, en el que no importa la velocidad a la que
+esté girando la carga, la potencia se mantiene en
+su valor máximo. Estas cargas se encuentran básicamente en máquinas herramientas, bobinadoras,
+dobladores, troquelados, etc. En estas cargas difícilmente se puede obtener ahorro de energía, debido a
+que el proceso exige el máximo de la potencia.
+
+Fig 6. Relación velocidad y potencia en equipos
+centrífugos
+
+Fuente: Ing. Alfredo Aguilar, Consultor, 2008.
+
+Como es de vital importancia conocer el tipo de aplicación donde se pretende instalar un convertidor,
+también es importante conocer algunos otros datos que ayudarán a hacer la elección correcta y evitar
+errores que pueden costar mucho dinero y tiempo. Es importante conocer los rangos de velocidades en
+los que va a trabajar la carga, y en qué porcentaje está trabajando en caso de un convertidor ya establecido, cuál es la potencia máxima y mínima que la carga demanda, qué par se requiere al arranque,
+etc. En la Figura 8 se muestra la relación que existe entre velocidad y potencia.
+Estos datos se conocen a través de la información técnica que proporcionen los fabricantes de los
+equipos y a través de mediciones realizadas en campo en el caso de que el equipo ya esté funcionando
+y se quiera determinar los porcentajes de carga a la que esté trabajando, y una vez conocida esta información, dimensionar las características y capacidades de los equipos para el sistema trabaje con la
+mejor eficiencia posible.
+Muchas de las aplicaciones de velocidad variable utilizan reductores después del motor, debido a requerimientos de velocidad baja y pares elevados, ya que la reducción se realiza por medios mecánicos
+como engranes, bandas, etc., es necesario tomar en cuenta las relaciones de reducción y considerar el
+motor y el reductor exacto para el caso específico.
+34
+
+Manual Técnico de Motores Eléctricos
+8.5
+
+Beneficios y ventajas de la aplicación de convertidores
+
+Al utilizar los CFV como método de control se puede eliminar la inversión inicial de cualquier tipo de
+arrancador y protección del motor, ya que éstos hacen función de arranque y protección, mejorando
+la operación evitando los picos en el arranque el cual se realiza de forma suave, por consiguiente se
+pueden eliminar las presiones excesivas y golpes de ariete en tuberías.
+También al utilizar este sistema en bombeo se requieren menos bombas, por ejemplo, para regular el
+flujo se utiliza bombas de diferentes capacidades, conectadas en paralelo, las cuales operan en turnos
+y se logra el control de paso a paso. Este control se puede lograr con una inversión menor, si se utiliza
+sólo una bomba de mayor capacidad con un CFV para obtener el control de flujo, y en algunos casos se
+puede eliminar el uso de tanques de presión, ya que con el CFV se logra un mejor control y proporciona
+una presión uniforme.
+Otra de las ventajas es la disminución en los costos de mantenimiento, al emplear los CFV equipos
+acoplados se someten a un menor desgaste, se reduce la carga estática ya que el sistema no tiene que
+trabajar constantemente con alta presión en ductos y tuberías, como en el caso del uso de válvulas, y
+la carga dinámica es menor comparando con un control intermitente de arranque y paro. En algunos
+casos se puede llegar a duplicar la vida útil de los equipos.
+En resumen, las ventajas al utilizar convertidores de frecuencia además del ahorro de energía son:
+•
+
+Proporcionan un arranque lento y suave.
+
+•
+
+Tiempos de aceleración y desaceleración ajustables.
+
+•
+
+Amplio rango de velocidad.
+
+•
+
+Mayor precisión en el control.
+
+•
+
+Sistema de control con microprocesador programable.
+
+•
+
+Factor de potencia casi unitario.
+
+•
+
+Convertidor de diseño compacto y requiere poco espacio.
+
+•
+
+Se aplica a motores de inducción robustos y sencillos.
+
+•
+
+Se pueden controlar remotamente.
+
+•
+
+Pueden enlazarse a una computadora o a sistemas de control.
+
+•
+
+Automatización sencilla y rápida al incorporar transductores.
+
+Además se obtienen los siguientes beneficios desde el punto de vista del proceso, y en consecuencia
+también se ahorra dinero:
+•
+
+Reducción en el desgaste de los sistemas electromotrices.
+
+•
+
+Incremento de la vida útil de los equipos asociados con los convertidores.
+
+•
+
+Incremento de la productividad.
+
+•
+
+Reducción de los costos de producción.
+
+35
+
+Manual Técnico de Motores Eléctricos
+Sitios de Consulta
+
+36
+
+•
+
+www.fide.org.mx
+
+•
+
+www.conae.gob.mx
+
+•
+
+www.cfe.gob.mx
+
+•
+
+www.energeticaintegral.com
+
+•
+
+www.baldordistribuidora.com
+
+•
+
+www.baldor.com
+
+•
+
+www.usmotors.com
+
+•
+
+www.weg.com.mx
+
+•
+
+www.eere.energy.gov
+
+•
+
+www.energysavingtrust.org.uk
+
+•
+
+www.eia.doe.gov
+
+BUN-CA contribuye al desarrollo y fortalecimiento de la capacidad
+energética de Centroamérica para aumentar la producción mediante
+el uso sostenible de los recursos naturales, como medio para
+mejorar la calidad de vida.
+www.bun-ca.org
+
+El Programa de las Naciones Unidas para el Desarrollo es una
+agencia de implementación del GEF, a través de su Oficina Nacional
+en Costa Rica, la cual es apoyada por sus contrapartes en los otros
+países centroamericanos.
+www.undp.org
+
+El Fondo del Medio Ambiente Mundial (GEF, por sus siglas en inglés)
+contribuye financieramente para cubrir los costos incrementales, a
+fin de alcanzar beneficios globales en el Área de Cambio Climático.
+www.gefweb.org
+
+La Universidad Tecnológica de Panamá forma y capacita integralmente al más alto nivel, Recurso Humano que genere, transforme,
+proyecte y transfiera ciencia y tecnología para emprender, promover
+e impulsar el desarrollo tecnológico, económico, social y cultural del
+País.
+www.utp.ac.pa
+
+P E E R Programa de Eficiencia Energética Regional
+en los Sectores Industrial y Comercial en Centroamérica
+
+
