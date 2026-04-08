@@ -1,0 +1,26 @@
+1. Fundamentos de la Hidráulica
+La hidráulica es la rama de la física (dentro de la mecánica de fluidos) que estudia el comportamiento de los líquidos, generalmente agua o aceite, para construir dispositivos de ingeniería. Se divide principalmente en dos campos:
+* Hidrostática: Estudia los fluidos en reposo.
+* Hidrodinámica: Se ocupa de los fluidos en movimiento.
+2. Conceptos Técnicos Fundamentales
+* Fluido: Sustancia capaz de fluir, lo que incluye tanto a líquidos como a gases.
+* Presión ($p$): Es la fuerza ($F$) ejercida perpendicularmente por unidad de superficie ($A$). Se expresa habitualmente en Pascales ($Pa$) o atmósferas ($atm$).
+* Densidad ($\delta$): Relación entre la masa de un cuerpo y el volumen que ocupa ($\delta = m/V$).
+* Viscosidad: Es la resistencia que ofrece un fluido a las tensiones cortantes. El uso de aceite en lugar de agua en hidráulica aprovecha su alta viscosidad para reducir pérdidas y lubricar el sistema.
+* Cohesión vs. Adhesión: La cohesión es la atracción entre moléculas de una misma sustancia (mantiene unido el cuerpo), mientras que la adhesión es la atracción entre superficies de cuerpos distintos.
+* Tensión Superficial: Condición en la superficie de un líquido que actúa como una membrana elástica debido a fuerzas moleculares internas.
+3. Principios Físicos Clave
+* Principio de Pascal: Establece que la presión aplicada a un fluido encerrado se transmite con la misma intensidad en todas las direcciones. Es el fundamento de la prensa hidráulica, donde una fuerza pequeña en un pistón menor se multiplica en un pistón de mayor área.
+* Principio de Arquímedes: Todo cuerpo sumergido en un fluido experimenta un empuje hacia arriba igual al peso del fluido que desplaza. Esto explica por qué flotan los barcos.
+* Capilaridad: Es la elevación o depresión de un líquido al contacto con un sólido (como un tubo estrecho). Ocurre cuando las fuerzas de adhesión superan a las de cohesión (el líquido sube) o viceversa (el líquido baja).
+4. Componentes y Aplicaciones Industriales
+Los sistemas hidráulicos se utilizan en frenos de automóviles, elevadores, gatos y maquinaria de construcción debido a su capacidad para generar grandes fuerzas y un control preciso. Los componentes básicos incluyen:
+* Bombas: Transforman la energía mecánica en energía hidráulica (flujo de aceite). Las más comunes son las de engranajes.
+* Válvulas: Controlan la dirección, presión y caudal del fluido. Existen válvulas manuales y de solenoide (accionadas eléctricamente).
+* Cilindros y Actuadores: Convierten la presión del fluido en trabajo mecánico lineal o giratorio.
+* Manómetros: Instrumentos para medir la presión del sistema.
+5. Mantenimiento y Seguridad
+* Limpieza: Es crítica en sistemas hidráulicos; cualquier contaminante puede dañar componentes con tolerancias muy estrechas.
+* Mangueras y Sellos: Deben inspeccionarse por fugas y los anillos "O" (sellos) deben reemplazarse generalmente cada vez que se desconecta una unión.
+* Purga de Aire: Después de una reparación, es necesario operar el sistema lentamente para expulsar el aire atrapado antes de trabajar a plena carga.
+
