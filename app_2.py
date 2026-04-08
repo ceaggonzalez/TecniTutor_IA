@@ -65,7 +65,7 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         instrucciones = f"Eres TecniTutor IA. Usa este manual: {contexto}. Reglas: Seguridad LOTO y usa andamiaje."
         
         model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash",
+            model_name="gemini-3-flash-preview",
             system_instruction=instrucciones
         )
 
