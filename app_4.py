@@ -62,7 +62,7 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
     with st.chat_message("assistant"):
         contexto = st.session_state.get('contexto_maestro', "No hay manual seleccionado.")
         
-        instrucciones = (f"""
+        instrucciones = f"""
             Eres "TecniTutor IA", un tutor especializado en Mantenimiento Industrial. 
             Tu objetivo es guiar a estudiantes de 15 a 18 años.
 
