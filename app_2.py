@@ -49,19 +49,14 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        # En lugar de cargar el manual siempre, dale un resumen o pídele que sea breve
-        resumen_manual = st.session_state.get('contexto_maestro', "")[:5000] # Solo los primeros 5000 caracteres
-
-        instrucciones_base = f"""
-        Eres TecniTutor IA. 
-        REGLAS: 
-        1. Responde de forma muy breve (máximo 3 oraciones).
-        2. Usa este fragmento del manual: {resumen_manual}
-        """
+        contexto = st.session_state.get('contexto_maestro', "No hay manual seleccionado.")
+        
+        instrucciones = f"Eres TecniTutor IA. Usa este manual: {contexto}. Reglas: Seguridad LOTO y usa andamiaje."
+        
         model = genai.GenerativeModel(
-    model_name="gemini-2.5-flash",
-    system_instruction=instrucciones_base
-    )
+            model_name="gemini-2.0-flash",
+            system_instruction=instrucciones
+        )
 
         # --- RECORTE DE HISTORIAL (ESTRATEGIA LEAN) ---
         # Solo tomamos los últimos 6 mensajes para no saturar la memoria de tokens
