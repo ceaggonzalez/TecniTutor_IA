@@ -26,12 +26,8 @@ def leer_documento(nombre_archivo):
 
 # --- INTERFAZ Y SELECCIÓN DE MANUAL ---
 st.title("🤖 TecniTutor IA")
-
-with st.sidebar:
-    st.header("📂 Configuración")
-    
     # 1. Obtener lista de archivos en la carpeta
-    with st.sidebar:
+with st.sidebar:
     st.header("⚙️ Configuración")
     
     # Buscamos tanto .pdf como .txt
