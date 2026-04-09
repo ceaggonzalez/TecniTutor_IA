@@ -1,0 +1,226 @@
+Motores Eléctricos.
+
+Conocer los distintos tipos de motores eléctricos.
+Conexión de motores eléctricos trifásicos
+
+En la clase de hoy, vamos a conocer los distintos tipos de motores eléctricos y su
+funcionamiento. Para ello vamos a clasificar y analizar los distintos tipos de
+motores con los que podemos trabajar.
+MOTORES ELECTRICOS
+Los motores eléctricos son máquinas eléctricas rotatorias, que transforman la
+energía eléctrica en energía mecánica de rotación en un eje. Su funcionamiento se
+basa en las fuerzas de atracción y repulsión provocadas entre un imán y un
+conductor (bobina) por donde circula una corriente eléctrica.
+MOTOR DE CORRIENTE CONTINUA
+Son los más comunes y económicos; se pueden encontrar en la mayoría de los
+juguetes a pilas, constituidos, por lo general, por dos imanes permanentes fijados
+en la carcasa (estator) y una serie de bobinados de cobre ubicados en el eje del
+motor (rotor), que habitualmente suelen ser tres. La principal característica del
+motor de corriente continua es la posibilidad de regular la velocidad desde vacío a
+plena carga.
+
+MOTOR DE CORRIENTE ALTERNA
+El principio de funcionamiento de estos motores se basa en el campo magnético
+giratorio que crea una corriente alterna trifásica (3 fases) descubierto por Tesla y en
+el descubrimiento de las corrientes inducida de Faraday; dicho campo rotante
+producido en el estator, induce otro campo magnético en el bobinado del rotor, el
+cual tiende a acoplarse con el campo del estator y así producir el movimiento
+rotante.
+
+MOTOR MONOFÁSICO
+Utilizados para potencias en el eje menores a 2 o 3 kW. Se pueden encontrar 3
+tipos:
+
+
+de fase partida.
+
+
+
+de fase partida con arranque por capacitor.
+
+
+
+de espira en cortocircuito o de sombra.
+
+Un sistema monofásico de corriente alterna, NO genera un campo giratorio (a
+diferencia del trifásico). El motor no tiene par de arranque y por tanto no podría
+vencer en vacío ni sus propios rozamientos, no arrancando. Se necesita crear de la
+alguna manera un campo bifásico partiendo de uno monofásico para que nuestro
+motor monofásico arranque.
+
+
+MOTOR MONOFASICO: De fase partida o bobinado auxiliar con capacitor. De
+
+uso más común.
+
+Inversión de giro en motor monofásico: Es estos casos son las conexiones de las
+terminales de los bobinados del motor las que se deben intercalar para efectuar el
+cambio de rotación. Es decir, para cambiar el sentido de giro, se debe conmutar la
+alimentación de los bobinados.
+
+MOTOR TRIFÁSICO
+Por su velocidad de giro, los motores de corriente alterna se clasifican en
+sincrónicos y asincrónicos.
+
+
+Los motores sincrónicos se caracterizan porque la velocidad del campo
+magnético giratorio del estator es igual a la velocidad de giro del campo
+inducido en el rotor (velocidad del rotor). Se llama Sincrónico porque
+trabajan sincronizados los dos campos magnéticos, siempre que la carga no
+sea excesiva y le haga perder la sincronización. Este motor tiene la
+característica de que su velocidad de giro es directamente proporcional a la
+frecuencia de la red de corriente alterna que lo alimenta (50 o 60Hz)
+
+
+
+En los motores Asincrónicos la velocidad del campo magnético giratorio
+producido por el estator es mayor que la velocidad de giro del rotor. No
+están sincronizadas. SON LOS MÁS USADOS A NIVEL INDUSTRIAL.
+
+MOTOR ASINCRÓNICO TRIFÁSICO: posee 3 grupos de bobinas en el estator, que
+permiten 2 tipos de conexiones en sistemas trifásicos: CONEXIÓN TRIÁNGULO y
+CONEXIÓN ESTRELLA. El rotor está conformado por un bobinado fijo en
+cortocircuito (rotor JAULA DE ARDILLA), es decir, sin bornes de conexión, en el cual
+se induce la corriente provocada por el campo rotante del estator.
+
+BORNERA DE CONEXIÓN DE MOTOR TRIFÁSICO DE “JAULA DE ARDILLA”.
+
+CONEXIÓN ESTRELLA – TRIANGULO
+
+La tensión menor es la de diseño de cada bobina
+(triángulo).
+Para cada tipo de conexión no se debe conectar el
+motor a tensiones superiores a las indicadas en su
+diseño.
+
+Para recordar:
+
+
+La tensión mayor y la corriente menor corresponden a la CONEXIÓN
+ESTRELLA.
+
+
+
+La tensión menor y la corriente mayor corresponden a la CONEXIÓN
+TRIÁNGULO.
+
+
+
+Antes de conectar un motor trifásico verificar la chapa característica y
+luego hacer la conexión en la bornera.
+
+ARRANQUE DIRECTO
+Para el arranque directo del motor trifásico, se
+debe verificar los datos de la placa
+característica para conocer el tipo de conexión
+que se debe realizar: ESTRELLA o TRIÁNGULO.
+Se debe prestar atención a los valores de
+tensión en ambos esquemas de conexión.
+Si tenemos un motor trifásico con valores de
+tensión: 220 / 380V, significa que las bobinas
+de motor de forma individual están diseñadas
+para 220V. Por lo tanto en trifásico, la única
+conexión que puede soportar sería ESTRELLA,
+donde la tensión entre fases se reparte entre 2
+bobinas.
+
+Si
+
+conectamos
+
+el
+
+motor
+
+en
+
+TRIANGULO, se estarían aplicando a cada
+bobina, 380V, superando su valor de diseño.
+
+Si el motor posee los valores de tensión: 380 / 660V. Como no se posee un sistema
+trifásico de 660V, el motor admite la conexión en TRIANGULO, ya que el valor de
+diseño de cada bobina es de 380V.
+
+ARRANQUE ESTRELLA – TRIÁNGULO
+
+Interruptor para arranque Estrella-triángulo
+
+ARRANQUE ESTRELLA – TRIÁNGULO CON CONTACTORES
+Se requieren de 3 contactores para el arranque y un temporizador que conmutará
+entre un esquema de conexión y otro, cuando el motor llegue a valores de
+velocidad nominal. En la bornera del motor se deben liberar los 6 bornes, para
+luego realizar la conexión a través de los contactores.
+
+TEMPORIZADOR PARA ARRANQUE ESTRELLA – TRIÁNGULO
+
+INVERSIÓN DE GIRO EN MOTOR TRIFÁSICO
+Para conseguir invertir el sentido de giro del motor es
+necesario invertir también el sentido del campo giratorio.
+Esto se consigue invirtiendo la conexión de dos de las
+fases del motor. Esta maniobra se realiza normalmente
+utilizando automatismos a base de contactores.
+Al producir la inversión de giro, cambiando de posición 2
+de las 3 fases, se debe tener especial cuidado que de
+cerrar ambos interruptores simultáneamente, estaríamos
+provocando un cortocircuito en bornes del motor a
+conectar. En este caso existen métodos de prevención
+para evitar este tipo de conexión accidental, estamos
+hablando de enclavamientos en los interruptores o
+contactores que lo maniobren.
+
+Enclavamiento mecánico
+El enclavamiento mecánico se logra
+empleando un accesorio que se adosa
+entre los dos contactores y que
+actuando
+sobre
+los
+contactos
+principales de éstos, evita que ambos
+se cierren al mismo tiempo. En la
+figura pueden verse dos contactores
+con este accesorio montado entre
+ambos.
+
+Links de interés
+Notas sobre motores eléctricos:
+https://www.areatecnologia.com/EL%20MOTOR%20ELECTRICO.htm
+
+Para la clase de hoy, les vamos a pedir que realicen la siguiente actividad:
+Por medio de un audio o un escrito, relatar si alguna vez trabajaron y/o repararon
+algún tipo de motor de los mencionados en la presente ficha, y en caso de haber
+hecho una reparación eléctrica del mismo, contar cuál fue la falla y de qué manera
+pudieron resolverlo y si concuerda con lo expuesto en clase.
+En el caso de no haber tenido ninguna experiencia con motores eléctricos, pensar
+un posible desperfecto de un motor que tengan en su casa, trabajo, etc., (trifásico o
+monofásico) y según su criterio, que solución le pueden dar.
+
+Lee el texto de la clase y tomá algunas notas aparte de lo que creas más
+importante. No te olvides de ver el video que les compartimos.
+Con las notas que tomaste armá tu respuesta. Podes escribirla en el
+cuaderno sacarle una foto de calidad y enviarla, y/o compartirla en formato digital.
+También podes leer tu respuesta grabando un audio y enviarla al grupo. ¡Cómo te
+resulte más cómodo!
+Consultá lo que necesites, no te quedes con ninguna duda.
+No dejes de leer lo que responden tus compañeros.
+
+En la clase, aprendimos:
+
+
+Tipos de motores de uso común y sus tipos de conexiones a la red eléctrica.
+
+
+
+Diversos tipos de conexión de motores mediante uso de contactores y su
+comando de forma automática.
+
+No se olviden siempre de verificar siempre los valores característicos de los
+motores y de todos los elementos de maniobra y protección que intervienen,
+a fin de garantizar un funcionamiento eficiente y seguro.
+Acordate que podes encontrar todos los materiales de la Escuela Universitaria de Oficios
+en la página de la Universidad. Busquen su curso y tendrás acceso a todas las fichas
+que trabajaste hasta ahora. Navegar en la página y descargar los materiales es gratuito:
+no te consume datos.
+https://unlp.edu.ar/oficios/fichas-educativas-17882
+
+
