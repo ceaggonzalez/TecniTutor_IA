@@ -1,0 +1,313 @@
+Automatismos Eléctricos.
+
+Conocer el Contactor y elementos asociados para
+circuitos eléctricos.
+
+Selección del Contactor adecuado.
+
+En el encuentro de hoy, tal como podemos verlo en los objetivos, vamos a trabajar
+con los CONTACTRES. La idea principal es que ustedes puedan adquirir los
+conocimientos elementales para la interpretación de los circuitos más utilizados en
+el control de motores, señalizaciones y alarmas. Conocer la simbología, formas de
+representación, elementos intervinientes y circuitos básicos.
+A continuación, se presentarán todos los elementos intervinientes, con el propósito
+de estudiarlos, seguidamente, elaborar circuitos eléctricos con dichos elementos y
+aprender su funcionamiento.
+
+EL CONTACTOR.
+Es un dispositivo eléctrico que cumple la función de apertura y cierre de circuitos
+eléctricos, mediante la conexión y desconexión de sus contactos a través de una
+señal externa. Posee la capacidad de soportar la apertura de circuitos en
+condiciones normales de funcionamiento y además de tolerar grandes valores de
+corriente en sus contactos principales.
+
+Simbología
+
+La conexión y desconexión del contactor se realiza a través de la señal que llega a
+su BOBINA, desde los terminales A1 y A2, la cual funciona como un electroimán que
+al energizarse, atrae la pieza “1” que es solidaria con el conjunto de contactor
+principales y auxiliares.
+
+CARACTERISTICAS DEL CONTACTOR
+
+
+Opera elevados valores de corriente de las cargas, mediante el comando de
+corrientes de pequeño valor.
+
+
+
+Funcionamiento de forma continua o intermitente.
+
+
+
+Opción de mando a distancia.
+
+
+
+Duración prolongada, con millones de maniobras.
+
+
+
+Realización de circuitos simples o complejos, mediante contactos auxiliares,
+elementos adicionales, etc.
+
+
+
+Mantenimiento de la bobina, mediante su reemplazo ante una ruptura de
+ella.
+
+CONTACTOS AUXILIARES.
+Se utilizan para el desarrollo del circuito de comando, el cual hará que se energice
+la bobina conectando y desconectando el contactor. Dependiendo del modelo de
+contactor poseen contactos auxiliares adicionales incluidos. Caso contrario, se
+deben adicionar estos contactos auxiliares mediante elementos externos al
+contactor. Su accionamiento es mecánico, mediante una sujeción física al
+contactor.
+
+Los contactos auxiliares se identifican con los números “1-2” en los bornes,
+indicando para el caso de contacto normal cerrado (NC). Para el caso de contacto
+normal abierto (NA o NO) “3-4”.
+Cuando se indica un estado de los contactos, como normal cerrado o normal
+abierto, están indicando su estado en el modo de reposo, sin tensión en la bobina.
+
+RELE TÉRMICO DE SOBRECARGA.
+Un relé térmico es un aparato diseñado para la protección de motores contra
+sobrecargas, fallo de alguna fase y diferencias de carga entre fases. Posee
+contactos principales de potencia: 1-2, 3-4 y 5-6.
+El aparato incorpora dos contactos auxiliares, para su uso en el circuito de mando:
+ 1 contacto normal abierto (NO) identificado con la numeración 97-98 en sus
+bornes
+ 1 contacto normal cerrado (NC) identificado con la numeración 95-96 en sus
+bornes
+Dispone de un botón regulador-selector de la intensidad de protección. Además,
+incorpora un botón de prueba (STOP), y otro para restaurar el circuito (RESET).
+
+El relé térmico actúa en el circuito de mando, con dos contactos auxiliares y en el
+circuito de potencia, a través de sus tres contactos principales.
+El elemento, relé de sobrecarga térmico, no actúa en cortocircuitos; por lo que se
+debe implementar un elemento más de protección (fusible, interruptor magnético,
+etc.) para esta falla, aguas arriba.
+
+ELEMENTOS DE ACCIONAMIENTO
+La puesta en funcionamiento de los circuitos con contactores estará a cargo de
+elementos accionados de forma manual por el operador (pulsadores, llaves,
+pedaleras, etc.) o también su funcionamiento puede estar establecido mediante
+accionamientos externos sin presencia del operador (por ejemplo: fotocélulas,
+sensores de temperatura, de presión, temporizadores, automáticos de tanque,
+controladores digitales, etc.).
+ELEMENTOS MANUALES
+Son elementos de accionamiento que sirven para abrir o
+cerrar un circuito de control, permitiendo el paso o no de
+la corriente a través de ellos. Como su nombre lo indica, su
+funcionamiento es mientras se mantenga pulsándolo,
+luego de retirada la acción, este volverá a su estado de
+reposo (Normal abierto NO o normal cerrado NC).
+
+ELEMENTOS AUTOMATICOS
+Los siguientes elementos actuarán de forma directa sobre la bobina del contactor,
+salvo que manejen valores de tensiones diferentes.
+
+Permiten controlar el tiempo de activación o desactivación de
+bobinas de contactores o elementos de señalización.
+RELE TEMPORIZADO
+
+Pueden ser de retardo a la desconexión o a la conexión o ambas
+a la vez.
+
+FOTOCONTROL
+
+El fotocontrol que comúnmente se suele utilizar para el
+encendido y apagado de iluminación, se puede instalar en un
+circuito de iluminación para un mayor grupo de luminarias.
+Ejemplo: iluminación exterior de parques, calles, etc.
+
+TEMPORIZADOR
+DIGITAL
+
+Mediante la utilización de sus contactos de salida Normal
+Abierto y Normal Cerrado, se puede implementar en un circuito
+con contactores para realizar un control temporizado de cargas
+de mayor potencia.
+
+Los automáticos para tanques de agua se pueden implementar
+en un circuito con contactores. Pudiendo implementar 2 de
+ellos, tanque cisterna y tanque elevado, para accionar la bomba
+de agua.
+Para este caso particular, el valor de tensión a utilizar en estos
+circuitos en contacto con agua son 24V.
+
+RELE AUXILIAR.
+Se puede optar por su uso cuando conviven diferentes valores de tensiones en un
+mismo circuito. Ejemplo: iluminación en 220V y accionamiento en 12V; o circuitos
+de automáticos de tanques, donde los flotantes están a tensión de 24V y los
+contactores poseen bobina de 220V.
+
+EJEMPLO DE APLICACIÓN PARA ELEVACION DE AGUA:
+Un Caso en particular de
+utilización de relé auxiliar, es
+cuando se debe comandar
+una bomba (monofásica o
+trifásica)
+mediante
+un
+contactor con BOBINA DE
+220V. Por cuestiones de
+seguridad, los automáticos
+de tanques deben ser
+usados con tensiones de
+hasta 24V (tensión de
+seguridad). De esta forma se
+utiliza el relé auxiliar, cuando
+existan diferentes valores de
+tensiones convivientes. Si el
+contactor hubiera sido de
+bobina 24Vca, se elimina el
+uso del relé, actuando
+directamente
+con
+los
+automáticos de tanque.
+
+SELECCIÓN DE CONTACTOR.
+Un contactor es un aparato de maniobra con una elevada capacidad de operación
+destinado a la conexión y desconexión de cargas bajo diferentes condiciones de
+servicio. Las distintas normas han elaborado documentos que fijan pautas para la
+selección de tales dispositivos según las condiciones o categorías de uso.
+Criterios para la elección del contactor:
+ Tensión de la red de la instalación (220V, 380V)
+ Tensión de la bobina (24V, 220V, 380V, CC o CA)
+ Potencia nominal de la carga que maniobrará.
+ Categoría de servicio:
+
+
+
+Poder de Cierre: Corriente que el contactor puede establecer en forma
+satisfactoria y sin riesgo de soldadura de sus contactos.
+
+
+
+Poder de Corte: Corriente que el contactor puede cortar, sin riesgo de daño
+de los contactos y del aislamiento.
+
+
+
+Intensidad de servicio: valor de intensidad de corriente que circula por
+sus contactos principales de forma permanente.
+
+Toda la información necesaria se encuentra en la placa de características del
+contactor que normalmente se encuentra en uno de los laterales del mismo, en
+caso de duda, consultar las especificaciones técnicas en un catálogo del fabricante.
+
+CRITERIOS DE PROTECCIÓN CON CONTACTORESTodo circuito de fuerza deberá estar protegido frente a SOBRECARGAS Y
+CORTOCIRCUITOS, utilizando para ello una combinación de los dispositivos vistos
+en fichas anteriores. A la combinación de ambas protecciones se suele encontrar
+en un mismo dispositivo denominado GUARDAMOTOR. Tendremos entonces varias
+posibilidades:
+
+
+
+Protección contra cortocircuitos: Mediante fusible o un interruptor
+electromagnético situados antes del contactor.
+Protección contra sobrecargas: mediante un relé térmico de sobrecarga o
+un interruptor termomagnético, en este último caso, podemos sustituir la
+protección contra cortocircuitos por un dispositivo que combina ambos tipos
+de protección denominado GUARDAMOTOR; y que está diseñado para
+soportar las corrientes de arranque de motores.
+
+En el caso de utilizar 2 dispositivos diferentes, uno para la protección contra
+cortocircuitos y el otro para la protección contra sobrecargas, dispondremos la
+primera protección en la cabecera de la instalación, mientras que el térmico se
+dispondrá entre el contactor y el receptor. Si optamos por proteger la instalación
+con un dispositivo combinado, este se colocará en cabecera de la instalación, aguas
+arriba del contactor.
+
+Protección contra
+cortocircuitos por fusible (Q2) y
+sobrecargas por relé térmico
+(F1).
+
+Protección contra cortocircuitos por
+interruptor electromagnético (Q1) y
+sobrecargas por relé térmico (F1).
+
+Protección contra cortocircuitos y
+sobrecargas por interruptor
+termomagnético: GUARDAMOTOR.
+
+Links de interés.
+Contactor: constitución, funcionamiento y partes principales.
+https://www.youtube.com/watch?v=ugirDXSAo-o
+Introducción a los circuitos. Enclavamiento de contactores:
+https://www.youtube.com/watch?v=MYJa3XiQSoY
+
+Luego de realizar la lectura del material, observar las imágenes y mirar los videos
+recomendados, les proponemos que realicen las siguientes actividades:
+1. ¿Qué tipo de contactos o bornes posee el CONTACTOR? Mencionarlos y
+contar brevemente para que se usan o que se conectan en ellos.
+2. ¿Qué tipos de contactos auxiliares para contactores conoce? Indicar con qué
+numeración se los suele identificar.
+3. ¿Para qué se utiliza el relé térmico en conjunto con el contactor? Nombrar los
+contactos que poseen los relés y con qué numeración se los conoce.
+4. ¿Para qué se utilizan los relés auxiliares?
+5. Qué se debe tener en cuenta para seleccionar un CONTACTOR.
+6. Si tenemos un circuito de iluminación extenso que alimentar, ¿qué categoría
+de servicio de contactor deberíamos seleccionar?
+7. ¿Qué 2 tipos de protección se debe incluir en un circuito que alimenta a un
+motor eléctrico?
+
+¡Nos leemos en el celular!
+
+Lee el texto de la clase y tomá algunas notas aparte. Te recomendamos seguir
+usando el mismo cuaderno y si estas usando hojas podes engancharlas así tenés
+todo más ordenado.
+Con las notas que tomaste armá tu respuesta. Podes escribirla en el cuaderno
+sacarle una foto de calidad y enviarla, y/o compartirla en formato digital, ¡cómo te
+resulte más cómodo!
+Consultá lo que necesites, no te quedes con ninguna duda.
+No dejes de leer lo que responden tus compañerxs.
+
+En la clase de hoy, aprendimos qué es un CONTACTOR y sus accesorios. Los
+criterios de selección para instalarlos en circuitos eléctricos.
+En las próximas entregas se incursionará sobre interpretación y armado de
+esquemas eléctricos con contactores.
+Y no se olvides que pueden encontrar todos los materiales de la Escuela Universitaria de
+Oficios en la página de la Universidad. Busquen su curso y tendrás acceso a todas las
+fichas que trabajaste hasta ahora. Navegar en la página y descargar los materiales es
+gratuito: no te consume datos.
+https://unlp.edu.ar/oficios/fichas-educativas-17882
+
+Como las clases anteriores te pedimos que realices la autoevaluación. Nos
+interesan sus respuestas para mejorar cada clase y para que ustedes puedan hacer
+un repaso de lo aprendido antes de pasar al siguiente encuentro.
+Por esta razón, les pedimos que hagan click en el siguiente link donde
+encontrarán un cuadro similar al que ya hiciste en la clase anterior. Allí podrán
+marcar las opciones que les parezcan adecuadas y justificar su respuesta.
+https://forms.gle/una5mzwyXSExMBq29
+
+¡Nos vemos en una semana! ¡Hasta la clase siguiente!
+AUTOEVALUCIÓN DE LA CLASE
+ACERCA DE LA CLASE
+
+SÍ NO
+
+¿POR
+QUÉ?
+
+SÍ NO
+
+¿POR
+QUÉ?
+
+¿Tuviste dificultades para acceder al material? (por el celular o por
+otros medios)
+¿Tuviste dificultades para leer el material escrito?
+¿Crees que hay relación entre el tema de la clase y la actividad
+propuesta?
+Otras observaciones que quieras realizar.
+ACERCA DE LAS ACTIVIDADES
+¿Te resultó complicado realizar la actividad?
+¿Tuviste dificultades para enviar tu actividad por WhatsApp?
+¿Te diste un espacio para revisar lo realizado antes de entregar?
+Otras observaciones que quieras realizar.
+
+
