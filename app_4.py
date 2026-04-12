@@ -95,6 +95,11 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         except Exception as e:
             st.error(f"Error: {e}")
 
+#----Boton de Finalizado de sesion----
+if st.sidebar.button("Terminar Consulta"):
+    st.balloons()
+    st.success("¡Práctica finalizada! No olvides descargar tu archivo de evidencia y completar el formato de validación.")
+
 # Generar el texto del historial
 chat_history_text = "\n".join([f"{m['role']}: {m['content']}" for m in st.session_state.messages])
 
