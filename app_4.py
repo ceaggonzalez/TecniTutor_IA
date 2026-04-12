@@ -2,7 +2,17 @@ import streamlit as st
 import google.generativeai as genai
 from pypdf import PdfReader
 import os
+import datetime
 
+# Generar el texto del historial
+chat_history_text = "\n".join([f"{m['role']}: {m['content']}" for m in st.session_state.messages])
+
+st.sidebar.download_button(
+    label="📥 Descargar Evidencia (Trazabilidad)",
+    data=chat_history_text,
+    file_name=f"practica_{datetime.datetime.now().strftime('%Y%m%d_%H%M')}.txt",
+    mime="text/plain"
+)
 # --- CONFIGURACIÓN ---
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
