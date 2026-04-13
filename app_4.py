@@ -86,7 +86,7 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         model = genai.GenerativeModel(
             model_name="gemini-3-flash-preview", 
             system_instruction=instrucciones,
-            generation_config=generation_config # <--- Aquí inyectas el control
+            generation_config=generation_config # <--- Aquí es donde se activan las configuraciones de control de respuesta del modelo
         )
 
         # --- RECORTE DE HISTORIAL (ESTRATEGIA LEAN) ---
