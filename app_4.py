@@ -73,9 +73,20 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
             4. Si ignoran la seguridad, DETÉN la explicación y enfatiza el riesgo.
             """
         
+        #model = genai.GenerativeModel(
+            #model_name="gemini-3-flash-preview",
+            #system_instruction=instrucciones
+        #)
+        generation_config = {
+            "temperature": 0.0,
+            "top_p": 1.0,
+            "max_output_tokens": 800,
+        }
+
         model = genai.GenerativeModel(
-            model_name="gemini-3-flash-preview",
-            system_instruction=instrucciones
+            model_name="gemini-3-flash-preview", 
+            system_instruction=instrucciones,
+            generation_config=generation_config # <--- Aquí inyectas el control
         )
 
         # --- RECORTE DE HISTORIAL (ESTRATEGIA LEAN) ---
