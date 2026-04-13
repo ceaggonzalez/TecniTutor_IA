@@ -4,10 +4,10 @@ from pypdf import PdfReader
 import os
 import datetime
 
-# --- CONFIGURACIÓN ---
+#CONFIGURACIÓN
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# --- FUNCIÓN PARA CARGAR UN MANUAL ESPECÍFICO ---
+#FUNCIÓN PARA CARGAR UN MANUAL ESPECÍFICO
 def leer_documento(nombre_archivo):
     texto = ""
     ruta = os.path.join("manuales", nombre_archivo)
@@ -33,13 +33,13 @@ def leer_documento(nombre_archivo):
         st.error(f"Error al leer {nombre_archivo}: {e}")
     return texto
 
-# --- INTERFAZ Y SELECCIÓN DE MANUAL ---
+#INTERFAZ Y SELECCIÓN DE MANUAL
 st.title("🤖 TecniTutor IA")
-    # 1. Obtener lista de archivos en la carpeta
+    #Obtener lista de archivos en la carpeta
 with st.sidebar:
     st.header("⚙️ Configuración")
     
-    # Buscamos tanto .pdf como .txt
+    #Busca tanto .pdf como .txt
     archivos = [f for f in os.listdir("manuales") if f.endswith((".pdf", ".txt"))] if os.path.exists("manuales") else []
     
     if archivos:
@@ -50,11 +50,11 @@ with st.sidebar:
     else:
         st.warning("⚠️ Sube archivos .pdf o .txt a la carpeta /manuales.")
 
-# Inicializar historial si no existe
+#Inicializar historial si no existe
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# --- LÓGICA DEL CHAT CON HISTORIAL ACORTADO ---
+#LÓGICA DEL CHAT CON HISTORIAL
 if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -86,11 +86,11 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         model = genai.GenerativeModel(
             model_name="gemini-3-flash-preview", 
             system_instruction=instrucciones,
-            generation_config=generation_config # <--- Aquí es donde se activan las configuraciones de control de respuesta del modelo
+            generation_config=generation_config # Activacion de las configuraciones de control de respuesta del modelo
         )
 
-        # --- RECORTE DE HISTORIAL (ESTRATEGIA LEAN) ---
-        # Solo tomamos los últimos 6 mensajes para no saturar la memoria de tokens
+        # RECORTE DE HISTORIAL
+        # Solo se toman los últimos 6 mensajes para no saturar la memoria de tokens
         mensajes_recientes = st.session_state.messages[-6:]
         
         history_google = []
@@ -106,12 +106,12 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         except Exception as e:
             st.error(f"Error: {e}")
 
-#----Boton de Finalizado de sesion----
+#Boton de Finalizado de sesion
 if st.sidebar.button("Terminar Consulta"):
     st.balloons()
     st.success("¡Práctica finalizada! No olvides descargar tu archivo de evidencia y completar el formato de validación.")
 
-# Generar el texto del historial
+#Generar el texto del historial
 chat_history_text = "\n".join([f"{m['role']}: {m['content']}" for m in st.session_state.messages])
 
 st.sidebar.download_button(
