@@ -80,7 +80,7 @@ if prompt := st.chat_input("¿Cuál es tu duda técnica?"):
         generation_config = {
             "temperature": 0.0,
             "top_p": 1.0,
-            "max_output_tokens": 800,
+            #"max_output_tokens": 800,
         }
 
         model = genai.GenerativeModel(
